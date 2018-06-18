@@ -90,7 +90,7 @@
                                 <navigationItem id="TxX-qi-Amn">
                                     <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="olb-bf-MQc">
                                         <connections>
-                                            <segue destination="Z4T-tl-Trl" kind="unwind" unwindAction="unwindSegueToLoginScreenViewControllerWithSegue:" id="ZMb-qs-0vS"/>
+                                            <segue destination="Z4T-tl-Trl" kind="unwind" unwindAction="unwindToLoginScreenViewControllerWithSegue:" id="rE2-lJ-XzE"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
