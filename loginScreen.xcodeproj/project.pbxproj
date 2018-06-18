@@ -15,6 +15,7 @@
 		82451D3F20D7FEC300661CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82451D3D20D7FEC300661CE2 /* Main.storyboard */; };
 		82451D4120D7FEC700661CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82451D4020D7FEC700661CE2 /* Assets.xcassets */; };
 		82451D4420D7FEC700661CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */; };
+		8293D80C20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		82451D4020D7FEC700661CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82451D4320D7FEC700661CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82451D4520D7FEC700661CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewAccountTableViewController.swift; sourceTree = "<group>"; };
 		CB5C992AD1C07790C1F7BF67 /* Pods-loginScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginScreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-loginScreen/Pods-loginScreen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				82451D3920D7FEC300661CE2 /* AppDelegate.swift */,
 				82451D3D20D7FEC300661CE2 /* Main.storyboard */,
 				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
+				8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */,
 				4468B76C20D82A2600B57D44 /* URL+Helpers.swift */,
 				82451D4020D7FEC700661CE2 /* Assets.xcassets */,
 				82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */,
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8293D80C20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift in Sources */,
 				82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */,
 				4468B76F20D82B5700B57D44 /* LoginController.swift in Sources */,
 				4468B76D20D82A2600B57D44 /* URL+Helpers.swift in Sources */,
