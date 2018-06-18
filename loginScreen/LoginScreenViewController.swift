@@ -10,12 +10,25 @@ import UIKit
 
 class LoginScreenViewController: UIViewController {
 
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
     }
 
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        var username = usernameField.text ?? ""
+        var passwordHash = passwordField.text ?? ""
+        
+        print(username)
+        print(passwordHash)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
