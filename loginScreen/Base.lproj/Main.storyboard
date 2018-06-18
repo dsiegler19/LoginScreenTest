@@ -65,9 +65,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="tH6-yl-qII"/>
-                    <connections>
-                        <segue destination="TeC-jz-Ru7" kind="show" id="Kha-oS-lnV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -432,7 +429,4 @@
             <point key="canvasLocation" x="-42.399999999999999" y="87.706146926536732"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Kha-oS-lnV"/>
-    </inferredMetricsTieBreakers>
 </document>
