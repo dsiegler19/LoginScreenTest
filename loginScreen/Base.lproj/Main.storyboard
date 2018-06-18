@@ -211,14 +211,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-9g-7sg">
-                                                    <rect key="frame" x="7" y="6" width="360" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-8N-fE0" userLabel="Color Picker">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="tgd-9i-sd9"/>
+                                                    </constraints>
+                                                </pickerView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="KBQ-8N-fE0" secondAttribute="bottom" id="7lL-4J-zfk"/>
+                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="top" secondItem="Gjo-cn-vRw" secondAttribute="top" id="I4v-cK-A75"/>
+                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="width" secondItem="Gjo-cn-vRw" secondAttribute="width" id="JOT-Ms-sjz"/>
+                                                <constraint firstAttribute="trailing" secondItem="KBQ-8N-fE0" secondAttribute="trailing" id="Lij-0v-Vac"/>
+                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="leading" secondItem="Gjo-cn-vRw" secondAttribute="leading" id="nUF-1u-CLY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -238,6 +244,9 @@
                                                         <constraint firstAttribute="height" constant="43.5" id="9U5-HW-ohm"/>
                                                     </constraints>
                                                     <state key="normal" title="Create Account"/>
+                                                    <connections>
+                                                        <action selector="createAccountButtonTapped:" destination="TeC-jz-Ru7" eventType="touchUpInside" id="muD-4j-gZF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -257,6 +266,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="WiA-cM-xAF"/>
+                    <connections>
+                        <outlet property="confirmEmailTextField" destination="6RD-Ea-OVd" id="Aew-QW-Poi"/>
+                        <outlet property="confirmPasswordTextField" destination="7Vf-Zj-Tpn" id="C0K-Du-hMi"/>
+                        <outlet property="emailTextField" destination="IPt-DO-Sqe" id="D0b-Mq-21X"/>
+                        <outlet property="passwordTextField" destination="MgZ-Nd-ozk" id="xrg-Wh-DEx"/>
+                        <outlet property="pickerView" destination="KBQ-8N-fE0" id="gJC-hI-KyN"/>
+                        <outlet property="usernameTextField" destination="EXG-9I-Ruo" id="aPg-B3-mSQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2k-sv-IGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Z4T-tl-Trl" userLabel="Exit" sceneMemberID="exit"/>

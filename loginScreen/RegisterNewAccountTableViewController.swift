@@ -8,8 +8,40 @@
 
 import UIKit
 
-class RegisterNewAccountTableViewController: UITableViewController {
-
+class RegisterNewAccountTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var confirmEmailTextField: UITextField!
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    var favoriteColor: String?
+    
+    @IBAction func createAccountButtonTapped(_ sender: Any) {
+    }
+    
+    let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 7
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return colors[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        favoriteColor = colors[row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
