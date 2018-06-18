@@ -25,6 +25,8 @@ class LoginController {
             if let data = data, let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
                 
                 print(jsonDictionary)
+                print(jsonDictionary?["username"])
+                print(type(of: jsonDictionary?["username"]!))
                 
             }
             
