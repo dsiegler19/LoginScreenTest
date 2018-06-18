@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHash
 
 class LoginScreenViewController: UIViewController {
 
@@ -24,8 +25,9 @@ class LoginScreenViewController: UIViewController {
         var username = usernameField.text ?? ""
         var passwordHash = passwordField.text ?? ""
         
-        print(username)
-        print(passwordHash)
+        var a = MD5("password")
+        
+        print(a)
         
     }
     
