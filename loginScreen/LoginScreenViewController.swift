@@ -58,6 +58,10 @@ class LoginScreenViewController: UIViewController {
         
     }
     
+    @IBAction func unwindToLoginScreenViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "LoginSuccessful" {
