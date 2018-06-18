@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474634620D81AC500557888 /* LoginScreenViewController.swift */; };
 		82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82451D3920D7FEC300661CE2 /* AppDelegate.swift */; };
 		82451D3C20D7FEC300661CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82451D3B20D7FEC300661CE2 /* ViewController.swift */; };
 		82451D3F20D7FEC300661CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82451D3D20D7FEC300661CE2 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4474634620D81AC500557888 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		82451D3620D7FEC300661CE2 /* loginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82451D3920D7FEC300661CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82451D3B20D7FEC300661CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				82451D3920D7FEC300661CE2 /* AppDelegate.swift */,
 				82451D3B20D7FEC300661CE2 /* ViewController.swift */,
 				82451D3D20D7FEC300661CE2 /* Main.storyboard */,
+				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
 				82451D4020D7FEC700661CE2 /* Assets.xcassets */,
 				82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */,
 				82451D4520D7FEC700661CE2 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				82451D3C20D7FEC300661CE2 /* ViewController.swift in Sources */,
 				82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */,
+				4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
