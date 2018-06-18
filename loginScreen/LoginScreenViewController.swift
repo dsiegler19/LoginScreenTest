@@ -28,19 +28,27 @@ class LoginScreenViewController: UIViewController {
         let username = usernameField.text ?? ""
         let passwordHash = MD5(passwordField.text ?? "").lowercased()
         
-        LoginController.shared.attemptLogin(username, passwordHash) { (UserAccount) in
+        LoginController.shared.attemptLogin(username, passwordHash) { (acc) in
             
-            
+            DispatchQueue.main.async {
+                
+                if let acc = acc {
+                    
+                    self.userAccount = acc
+                    self.performSegue(withIdentifier: "LoginSuccessful", sender: nil)
+                    
+                }
+                
+                else {
+                    
+                    print("Invalid")
+                    // Find a way to display this
+                    
+                }
+                
+            }
             
         }
-        
-        /*if let acc = LoginController.shared.attemptLogin(username, passwordHash) {
-            
-            userAccount = acc
-            
-            self.performSegue(withIdentifier: "LoginSuccessful", sender: nil)
-            
-        }*/
         
     }
     
@@ -55,7 +63,7 @@ class LoginScreenViewController: UIViewController {
         if segue.identifier == "LoginSuccessful" {
             
             let colorViewController = segue.destination as! ColorViewController
-            colorViewController.userAccount = userAccount!
+            colorViewController.userAccount = self.userAccount!
             
         }
         
