@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4468B76D20D82A2600B57D44 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468B76C20D82A2600B57D44 /* URL+Helpers.swift */; };
+		4468B76F20D82B5700B57D44 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468B76E20D82B5700B57D44 /* LoginController.swift */; };
 		4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474634620D81AC500557888 /* LoginScreenViewController.swift */; };
 		7CD2C60E95A9EA6F3E83796C /* Pods_loginScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7DC187328EE42D7B343F34 /* Pods_loginScreen.framework */; };
 		82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82451D3920D7FEC300661CE2 /* AppDelegate.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4468B76C20D82A2600B57D44 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
+		4468B76E20D82B5700B57D44 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4474634620D81AC500557888 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		559B34C37E1496BA3F258F53 /* Pods-loginScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loginScreen/Pods-loginScreen.debug.xcconfig"; sourceTree = "<group>"; };
 		6B7DC187328EE42D7B343F34 /* Pods_loginScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loginScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,9 +76,11 @@
 				82451D3920D7FEC300661CE2 /* AppDelegate.swift */,
 				82451D3D20D7FEC300661CE2 /* Main.storyboard */,
 				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
+				4468B76C20D82A2600B57D44 /* URL+Helpers.swift */,
 				82451D4020D7FEC700661CE2 /* Assets.xcassets */,
 				82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */,
 				82451D4520D7FEC700661CE2 /* Info.plist */,
+				4468B76E20D82B5700B57D44 /* LoginController.swift */,
 			);
 			path = loginScreen;
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */,
+				4468B76F20D82B5700B57D44 /* LoginController.swift in Sources */,
+				4468B76D20D82A2600B57D44 /* URL+Helpers.swift in Sources */,
 				4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

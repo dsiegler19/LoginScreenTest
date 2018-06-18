@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftHash
+import Foundation
 
 class LoginScreenViewController: UIViewController {
 
@@ -22,12 +23,13 @@ class LoginScreenViewController: UIViewController {
 
     @IBAction func loginButtonPressed(_ sender: Any) {
         
-        var username = usernameField.text ?? ""
-        var passwordHash = passwordField.text ?? ""
+        let username = usernameField.text ?? ""
+        let passwordHash = MD5(passwordField.text ?? "").lowercased()
         
-        var a = MD5("password")
+        print(username)
+        print(passwordHash)
         
-        print(a)
+        LoginController.shared.attemptLogin(username, passwordHash)
         
     }
     
