@@ -38,7 +38,7 @@
                                         <rect key="frame" x="112.5" y="100" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="RtE-LF-QgQ" kind="presentation" id="xDK-Oc-rvr"/>
+                                            <segue destination="RtE-LF-QgQ" kind="presentation" identifier="" id="xDK-Oc-rvr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-CN-pNj">
@@ -66,7 +66,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="tH6-yl-qII"/>
                     <connections>
-                        <segue destination="RtE-LF-QgQ" kind="presentation" identifier="homeScreen" id="W08-Sj-djD"/>
                         <segue destination="TeC-jz-Ru7" kind="show" id="Kha-oS-lnV"/>
                     </connections>
                 </viewController>
@@ -434,7 +433,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W08-Sj-djD"/>
         <segue reference="Kha-oS-lnV"/>
     </inferredMetricsTieBreakers>
 </document>
