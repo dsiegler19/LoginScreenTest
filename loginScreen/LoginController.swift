@@ -14,7 +14,7 @@ class LoginController {
     
     let baseURL = URL(string: "http://localhost:8080/")!
     
-    func attemptLogin(_ username: String, _ passwordHash: String) {
+    func attemptLogin(_ username: String, _ passwordHash: String, completion: @escaping (UserAccount?) -> Void) {
         
         let verifyURL = baseURL.appendingPathComponent("verify").withQueries(["username": username, "password": passwordHash])!
         
@@ -22,11 +22,17 @@ class LoginController {
         
         let task = URLSession.shared.dataTask(with: verifyURL, completionHandler: { (data, response, error) in
             
-            if let data = data, let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            let jsonDecoder = JSONDecoder()
+            
+            if let data = data, let userAccount = try? jsonDecoder.decode(UserAccount.self, from: data) {
                 
-                print(jsonDictionary)
-                print(jsonDictionary?["username"])
-                print(type(of: jsonDictionary?["username"]!))
+                completion(userAccount)
+                
+            }
+            
+            else {
+                
+                completion(nil)
                 
             }
             

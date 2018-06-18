@@ -39,7 +39,6 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfn-yu-DCg"/>
-                                            <segue destination="RtE-LF-QgQ" kind="presentation" identifier="" id="xDK-Oc-rvr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-CN-pNj">
@@ -69,6 +68,7 @@
                     <connections>
                         <outlet property="passwordField" destination="Rez-Ov-dgg" id="3Hr-Ya-5Ws"/>
                         <outlet property="usernameField" destination="TLb-2L-Mix" id="697-kI-arI"/>
+                        <segue destination="RtE-LF-QgQ" kind="presentation" identifier="LoginSuccessful" id="aaZ-uL-9QO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -280,16 +280,32 @@
             </objects>
             <point key="canvasLocation" x="1767.2" y="635.53223388305855"/>
         </scene>
-        <!--View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="1aK-eq-Ktt">
             <objects>
-                <viewController id="RtE-LF-QgQ" sceneMemberID="viewController">
+                <viewController id="RtE-LF-QgQ" customClass="ColorViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mhy-hj-eMd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1o-rv-SBd">
+                                <rect key="frame" x="16" y="309.5" width="343" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c1o-rv-SBd" firstAttribute="centerY" secondItem="Mhy-hj-eMd" secondAttribute="centerY" id="5B4-EN-xJf"/>
+                            <constraint firstItem="c1o-rv-SBd" firstAttribute="leading" secondItem="saR-0v-BWO" secondAttribute="leading" constant="16" id="Gjq-it-CuV"/>
+                            <constraint firstItem="c1o-rv-SBd" firstAttribute="centerX" secondItem="Mhy-hj-eMd" secondAttribute="centerX" id="tIv-ZW-UTw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="saR-0v-BWO"/>
                     </view>
+                    <connections>
+                        <outlet property="colorLabel" destination="c1o-rv-SBd" id="qcE-qI-DdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bk9-x1-em8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
