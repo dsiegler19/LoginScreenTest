@@ -10,7 +10,6 @@
 		4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474634620D81AC500557888 /* LoginScreenViewController.swift */; };
 		7CD2C60E95A9EA6F3E83796C /* Pods_loginScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7DC187328EE42D7B343F34 /* Pods_loginScreen.framework */; };
 		82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82451D3920D7FEC300661CE2 /* AppDelegate.swift */; };
-		82451D3C20D7FEC300661CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82451D3B20D7FEC300661CE2 /* ViewController.swift */; };
 		82451D3F20D7FEC300661CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82451D3D20D7FEC300661CE2 /* Main.storyboard */; };
 		82451D4120D7FEC700661CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82451D4020D7FEC700661CE2 /* Assets.xcassets */; };
 		82451D4420D7FEC700661CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 		6B7DC187328EE42D7B343F34 /* Pods_loginScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loginScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82451D3620D7FEC300661CE2 /* loginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82451D3920D7FEC300661CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82451D3B20D7FEC300661CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82451D3E20D7FEC300661CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82451D4020D7FEC700661CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82451D4320D7FEC700661CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				82451D3920D7FEC300661CE2 /* AppDelegate.swift */,
-				82451D3B20D7FEC300661CE2 /* ViewController.swift */,
 				82451D3D20D7FEC300661CE2 /* Main.storyboard */,
 				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
 				82451D4020D7FEC700661CE2 /* Assets.xcassets */,
@@ -203,7 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82451D3C20D7FEC300661CE2 /* ViewController.swift in Sources */,
 				82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */,
 				4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */,
 			);
@@ -351,13 +347,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MR978M98ZD;
+				DEVELOPMENT_TEAM = 6PKV59FL9H;
 				INFOPLIST_FILE = loginScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wris.loginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.bzwyant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,13 +366,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MR978M98ZD;
+				DEVELOPMENT_TEAM = 6PKV59FL9H;
 				INFOPLIST_FILE = loginScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wris.loginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.bzwyant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
