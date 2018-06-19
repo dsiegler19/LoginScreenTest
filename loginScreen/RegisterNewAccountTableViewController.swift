@@ -8,7 +8,11 @@
 
 import UIKit
 
-class RegisterNewAccountTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RegisterNewAccountTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+    
+    @IBOutlet weak var colorPickerStackView: UIStackView!
+    @IBOutlet weak var favoriteColorTextField: UITextField!
+    
     
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -41,11 +45,23 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         favoriteColor = colors[row]
+        favoriteColorTextField.text = favoriteColor
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 5 {
+            return colorPickerStackView.bounds.height
+        } else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,17 +75,26 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Table view data source
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        
+        let cell = tableView.cellForRow(at: indexPath)
 
         return cell
-    }
-    */
+    }*/
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -97,7 +97,7 @@
                             </items>
                         </navigationBar>
                         <sections>
-                            <tableViewSection headerTitle="Username" id="TVS-uP-6Zg">
+                            <tableViewSection headerTitle="Username" footerTitle=" " id="TVS-uP-6Zg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fiq-zu-yhU">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -118,10 +118,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Password" id="weT-U9-7Tx">
+                            <tableViewSection headerTitle="Password" footerTitle=" " id="weT-U9-7Tx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lgo-Bk-cTl">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgo-Bk-cTl" id="H0D-sV-t57">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -139,10 +139,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Confirm Password" id="xZQ-WS-ZYA">
+                            <tableViewSection headerTitle="Confirm Password" footerTitle=" " id="xZQ-WS-ZYA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hWr-TS-EQ6">
-                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="272" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hWr-TS-EQ6" id="lUP-Zo-885">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -160,10 +160,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Email" id="pHE-y3-PNf">
+                            <tableViewSection headerTitle="Email" footerTitle=" " id="pHE-y3-PNf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MXO-N9-zID">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="372" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXO-N9-zID" id="PDv-Kk-2P1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -181,10 +181,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Confirm Email" id="xg0-aP-V7t">
+                            <tableViewSection headerTitle="Confirm Email" footerTitle=" " id="xg0-aP-V7t">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Dcv-B3-KGc">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="472" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dcv-B3-KGc" id="UDh-Hq-xff">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -205,25 +205,31 @@
                             <tableViewSection headerTitle="Favorite Color" id="mSK-ae-bgc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vxe-vG-gO8">
-                                        <rect key="frame" x="0.0" y="432" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="572" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vxe-vG-gO8" id="Gjo-cn-vRw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-8N-fE0" userLabel="Color Picker">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="tgd-9i-sd9"/>
-                                                    </constraints>
-                                                </pickerView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cwb-pp-AJn">
+                                                    <rect key="frame" x="7.5" y="10" width="360" height="246"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-Fw-6XK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpV-VD-stF" userLabel="Color Picker">
+                                                            <rect key="frame" x="0.0" y="30" width="360" height="216"/>
+                                                        </pickerView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KBQ-8N-fE0" secondAttribute="bottom" id="7lL-4J-zfk"/>
-                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="top" secondItem="Gjo-cn-vRw" secondAttribute="top" id="I4v-cK-A75"/>
-                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="width" secondItem="Gjo-cn-vRw" secondAttribute="width" id="JOT-Ms-sjz"/>
-                                                <constraint firstAttribute="trailing" secondItem="KBQ-8N-fE0" secondAttribute="trailing" id="Lij-0v-Vac"/>
-                                                <constraint firstItem="KBQ-8N-fE0" firstAttribute="leading" secondItem="Gjo-cn-vRw" secondAttribute="leading" id="nUF-1u-CLY"/>
+                                                <constraint firstItem="Cwb-pp-AJn" firstAttribute="width" secondItem="Gjo-cn-vRw" secondAttribute="width" multiplier="0.96" id="5JG-dP-TjF"/>
+                                                <constraint firstItem="Cwb-pp-AJn" firstAttribute="centerX" secondItem="Gjo-cn-vRw" secondAttribute="centerX" id="8zz-ar-7LG"/>
+                                                <constraint firstItem="Cwb-pp-AJn" firstAttribute="top" secondItem="Gjo-cn-vRw" secondAttribute="top" constant="10" id="gBF-Kk-hLF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -232,7 +238,7 @@
                             <tableViewSection headerTitle="     " id="fSR-0Z-ZMD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cCH-YH-de7">
-                                        <rect key="frame" x="0.0" y="504" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="644" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cCH-YH-de7" id="Zit-Xb-3NP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -267,11 +273,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="WiA-cM-xAF"/>
                     <connections>
+                        <outlet property="colorPickerStackView" destination="Cwb-pp-AJn" id="hpp-RG-qNe"/>
                         <outlet property="confirmEmailTextField" destination="6RD-Ea-OVd" id="Aew-QW-Poi"/>
                         <outlet property="confirmPasswordTextField" destination="7Vf-Zj-Tpn" id="C0K-Du-hMi"/>
                         <outlet property="emailTextField" destination="IPt-DO-Sqe" id="D0b-Mq-21X"/>
+                        <outlet property="favoriteColorTextField" destination="eHT-Fw-6XK" id="lCo-lJ-I1b"/>
                         <outlet property="passwordTextField" destination="MgZ-Nd-ozk" id="xrg-Wh-DEx"/>
-                        <outlet property="pickerView" destination="KBQ-8N-fE0" id="gJC-hI-KyN"/>
+                        <outlet property="pickerView" destination="tpV-VD-stF" id="Bpf-dT-uO0"/>
                         <outlet property="usernameTextField" destination="EXG-9I-Ruo" id="aPg-B3-mSQ"/>
                     </connections>
                 </tableViewController>
