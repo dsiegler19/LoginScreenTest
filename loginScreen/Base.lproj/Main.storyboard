@@ -113,7 +113,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="usernameChanged:" destination="TeC-jz-Ru7" eventType="editingDidEnd" id="tDr-SV-sGz"/>
+                                                        <action selector="usernameChanged:" destination="TeC-jz-Ru7" eventType="editingChanged" id="LXa-4h-un7"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -157,6 +157,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="confirmPasswordChanged:" destination="TeC-jz-Ru7" eventType="editingChanged" id="TUy-3v-HP6"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -199,6 +202,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="confirmEmailChanged:" destination="TeC-jz-Ru7" eventType="editingChanged" id="avw-Jp-rFZ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>

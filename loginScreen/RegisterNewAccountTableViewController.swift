@@ -24,6 +24,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var pickerView: UIPickerView!
     var favoriteColor: String?
     
+    let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
         
@@ -32,15 +34,64 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     @IBAction func usernameChanged(_ sender: Any) {
         
-        if let username = usernameTextField.text, username.isEmpty || !(username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) == nil) {
+        var text = ""
+        
+        if let username = usernameTextField.text, username.isEmpty || username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) != nil {
             
-            // self.tableView.head
+            text = "Username contains invalid characters"
             
         }
         
+        self.updateFooter(forSection: 0, newText: text)
+        
     }
     
-    let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    @IBAction func confirmPasswordChanged(_ sender: Any) {
+        
+        var text = ""
+        
+        if let confirmPassword = confirmPasswordTextField.text, let password = passwordTextField.text, confirmPassword != password {
+            
+            text = "Password doesn't match"
+            
+        }
+        
+        self.updateFooter(forSection: 2, newText: text)
+        
+    }
+    
+    @IBAction func confirmEmailChanged(_ sender: Any) {
+        
+        var text = ""
+        
+        if let confirmEmail = confirmEmailTextField.text, let email = emailTextField.text, confirmEmail != email {
+            
+            text = "Email doesn't match"
+            
+        }
+        
+        self.updateFooter(forSection: 4, newText: text)
+        
+    }
+    
+    func updateFooter(forSection section: Int, newText text: String) {
+        
+        UIView.setAnimationsEnabled(false)
+        self.tableView.beginUpdates()
+        
+        if let containerView = self.tableView.footerView(forSection: section) {
+            
+            containerView.textLabel!.textColor = UIColor.red
+            containerView.textLabel!.text = text
+            containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
+            containerView.sizeToFit()
+            
+        }
+        
+        tableView.endUpdates()
+        UIView.setAnimationsEnabled(true)
+        
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -56,61 +107,75 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         favoriteColor = colors[row]
         favoriteColorTextField.text = favoriteColor
+    
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if indexPath.section == 5 {
+            
             return colorPickerStackView.bounds.height
-        } else {
-            return super.tableView(tableView, heightForRowAt: indexPath)
+            
         }
+        
+        else {
+            
+            return super.tableView(tableView, heightForRowAt: indexPath)
+            
+        }
+        
     }
     
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
      
-        let footerView = UIView(frame: CGRect(x: 0, y: 8, width: tableView.frame.size.width, height: 16))
+        let footerView = UIView(frame: CGRect(x: 8, y: 0, width: tableView.frame.size.width, height: 12))
+        let label = UILabel(frame: footerView.frame)
+        label.textColor = UIColor.red
         
-        print(footerView)
+        var text = ""
         
-        if section == 0 {
+        switch section {
             
-            let label = UILabel(frame: footerView.frame)
-            label.text = "invalid username"
-            label.textColor = UIColor.red
-            footerView.addSubview(label)
+        case 0:
+            text = usernameErrorText
+        case 1:
+            text = passwordErrorText
+        case 2:
+            text = confirmPasswordErrorText
+        case 3:
+            text = emailErrorText
+        case 4:
+            text = confirmEmailErrorText
+        default:
+            text = ""
             
         }
+        
+        label.text = text
+        footerView.addSubview(label)
         
         return footerView
         
-    }
+    }*/
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
         
         pickerView.delegate = self
         pickerView.dataSource = self
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    
-    
-    
-    
-    
+    }
     
     
     // MARK: - Table view data source
