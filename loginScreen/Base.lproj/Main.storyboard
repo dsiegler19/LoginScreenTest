@@ -195,6 +195,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="emailChanged:" destination="TeC-jz-Ru7" eventType="editingChanged" id="CD7-fS-pKe"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

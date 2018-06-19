@@ -31,6 +31,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var favoriteColor: String?
     
     @IBOutlet weak var createAccountButton: UIButton!
+    
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
@@ -55,8 +56,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                 
             }
             
-            
-            
         }
         
         // Read back the results
@@ -70,21 +69,29 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         if let username = usernameTextField.text {
             
+            isUsernameValid = false
+            
             if username.isEmpty || username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) != nil {
                 
                 text = "Username contains invalid characters"
                 
             }
             
-            if username.count < 5 {
+            else if username.count < 5 {
                 
                 text = "Username is too short"
                 
             }
             
-            if username.count > 40 {
+            else if username.count > 40 {
                 
                 text = "Username is too long"
+                
+            }
+            
+            else {
+                
+                isUsernameValid = true
                 
             }
             
@@ -100,9 +107,17 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         if let password = passwordTextField.text {
             
+            isPasswordValid = false
+            
             if password.count < 5 {
                 
                 text = "Password is too short"
+                
+            }
+            
+            else {
+                
+                isPasswordValid = true
                 
             }
             
@@ -118,11 +133,45 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         if let confirmPassword = confirmPasswordTextField.text, let password = passwordTextField.text, confirmPassword != password {
             
+            isConfirmPasswordValid = false
+            
             text = "Password doesn't match"
             
         }
         
+        else {
+            
+            isConfirmPasswordValid = true
+            
+        }
+        
         self.updateFooter(forSection: 2, newText: text)
+        
+    }
+    
+    @IBAction func emailChanged(_ sender: Any) {
+        
+        var text = ""
+        
+        if let email = emailTextField.text {
+            
+            if email.count > 45 {
+                
+                text = "Email is too long"
+                
+                isEmailValid = false
+                
+            }
+            
+            else {
+                
+                isEmailValid = true
+                
+            }
+            
+        }
+        
+        self.updateFooter(forSection: 3, newText: text)
         
     }
     
@@ -132,7 +181,15 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         if let confirmEmail = confirmEmailTextField.text, let email = emailTextField.text, confirmEmail != email {
             
+            isConfirmEmailValid = false
+            
             text = "Email doesn't match"
+            
+        }
+        
+        else {
+            
+            isConfirmEmailValid = true
             
         }
         
@@ -215,38 +272,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         }
         
     }
-    
-    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-     
-        let footerView = UIView(frame: CGRect(x: 8, y: 0, width: tableView.frame.size.width, height: 12))
-        let label = UILabel(frame: footerView.frame)
-        label.textColor = UIColor.red
-        
-        var text = ""
-
-        switch section {
-            
-        case 0:
-            text = usernameErrorText
-        case 1:
-            text = passwordErrorText
-        case 2:
-            text = confirmPasswordErrorText
-        case 3:
-            text = emailErrorText
-        case 4:
-            text = confirmEmailErrorText
-        default:
-            text = ""
-            
-        }
-        
-        label.text = text
-        footerView.addSubview(label)
-        
-        return footerView
-        
-    }*/
     
     override func viewDidLoad() {
         
