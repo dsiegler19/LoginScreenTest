@@ -34,6 +34,8 @@ class LoginScreenViewController: UIViewController {
                 
                 if let acc = acc {
                     
+                    // User successfully logged in
+                    
                     self.userAccount = acc
                     self.performSegue(withIdentifier: "LoginSuccessful", sender: nil)
                     
@@ -41,8 +43,16 @@ class LoginScreenViewController: UIViewController {
                 
                 else {
                     
-                    print("Invalid")
-                    // Find a way to display this
+                    // Invalid credentials (or some other error)
+                    
+                    let alert = UIAlertController(title: "Invalid Credentials", message: "Either your username or password are incorrect", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default){ action in
+                        
+                        self.passwordField.text = nil
+                        
+                    })
+                    
+                    self.present(alert, animated: true, completion: nil)
                     
                 }
                 
