@@ -35,33 +35,65 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
-        
-        print("HERE")
-        
+                
         // Send POST request to the server
         RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: favoriteColor!) { responses in
             
-            if let responses = responses, responses.count >= 0 && responses[0] == "valid" {
+            if let responses = responses, responses.count >= 0 {
                 
                 DispatchQueue.main.async {
                     
-                    let alert = UIAlertController(title: "Account Creation Successful!", message: "Check your email in order to verify your account.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default){ action in
+                    if responses[0] == "valid" {
                         
-                        self.performSegue(withIdentifier: "RegisterSuccessful", sender: self)
+                        let alert = UIAlertController(title: "Account Creation Successful!", message: "Check your email in order to verify your account.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default){ action in
+                            
+                            self.performSegue(withIdentifier: "RegisterSuccessful", sender: self)
+                            
+                        })
                         
-                    })
-                    
-                    self.present(alert, animated: true, completion: nil)
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                        
+                    // Deal with errors
+                    else {
+                        
+                        self.tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
+                        
+                        for reason in responses {
+                            
+                            switch reason {
+                                
+                            case "nonunique_username":
+                                print(1)
+                                self.updateFooter(forSection: 0, newText: "Username already taken!")
+                            case "nonunique_email":
+                                print(2)
+                            case "invalid_password_hash":
+                                print(3)
+                            case "username_short":
+                                print(4)
+                            case "username_long":
+                                print(5)
+                            case "invalid_email":
+                                print(6)
+                            case "email_long":
+                                print(7)
+                            default:
+                                print(1000)
+                                
+                            }
+                            
+                        }
+                        
+                    }
                     
                 }
                 
             }
             
         }
-        
-        // Read back the results
-        // Display the appropriate response/error messages
         
     }
     
