@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftHash
 
 struct RegisterNewAccountController {
     
@@ -14,8 +15,10 @@ struct RegisterNewAccountController {
     
     let baseURL = URL(string: "http://localhost:8080/")!
     
-    func attemptRegisterNewUser(username: String, passwordHash: String, email: String, color: String, completion: @escaping ([String]?) -> Void) {
-                
+    func attemptRegisterNewUser(username: String, passwordString: String, email: String, color: String, completion: @escaping ([String]?) -> Void) {
+        
+        let passwordHash = MD5(passwordString).lowercased()
+        
         let data = ["username": username,
                        "password": passwordHash,
                        "email": email,
@@ -31,7 +34,7 @@ struct RegisterNewAccountController {
         
         request.httpBody = jsonData
         
-        let task = URLSession.shared.dataTask(with: registerURL, completionHandler: { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             
             let jsonDecoder = JSONDecoder()
             

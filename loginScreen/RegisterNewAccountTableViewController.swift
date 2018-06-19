@@ -28,7 +28,15 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
+        // Send POST request to the server
+        RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: favoriteColor!) { responses in
+            
+            print("here")
+            
+        }
         
+        // Read back the results
+        // Display the appropriate response/error messages
         
     }
     
