@@ -13,7 +13,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var colorPickerStackView: UIStackView!
     @IBOutlet weak var favoriteColorTextField: UITextField!
     
-    
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,6 +25,19 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var favoriteColor: String?
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
+        
+        
+        
+    }
+    
+    @IBAction func usernameChanged(_ sender: Any) {
+        
+        if let username = usernameTextField.text, username.isEmpty || !(username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) == nil) {
+            
+            // self.tableView.head
+            
+        }
+        
     }
     
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
@@ -54,6 +66,25 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         } else {
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+     
+        let footerView = UIView(frame: CGRect(x: 0, y: 8, width: tableView.frame.size.width, height: 16))
+        
+        print(footerView)
+        
+        if section == 0 {
+            
+            let label = UILabel(frame: footerView.frame)
+            label.text = "invalid username"
+            label.textColor = UIColor.red
+            footerView.addSubview(label)
+            
+        }
+        
+        return footerView
+        
     }
     
     override func viewDidLoad() {
