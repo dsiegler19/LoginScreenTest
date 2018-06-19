@@ -139,6 +139,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <action selector="passwordChanged:" destination="TeC-jz-Ru7" eventType="editingChanged" id="CpH-Au-gfc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

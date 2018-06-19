@@ -34,7 +34,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
             if let responses = responses, responses.count >= 0 && responses[0] == "valid" {
                 
-                print("YAAAAAS")
+                
                 
             }
             
@@ -51,13 +51,47 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         var text = ""
         
-        if let username = usernameTextField.text, username.isEmpty || username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) != nil {
+        if let username = usernameTextField.text {
             
-            text = "Username contains invalid characters"
+            if username.isEmpty || username.range(of: "[^a-zA-Z0-9._]", options: .regularExpression) != nil {
+                
+                text = "Username contains invalid characters"
+                
+            }
+            
+            if username.count < 5 {
+                
+                text = "Username is too short"
+                
+            }
+            
+            if username.count > 40 {
+                
+                text = "Username is too long"
+                
+            }
             
         }
         
         self.updateFooter(forSection: 0, newText: text)
+        
+    }
+    
+    @IBAction func passwordChanged(_ sender: Any) {
+        
+        var text = ""
+        
+        if let password = passwordTextField.text {
+            
+            if password.count < 5 {
+                
+                text = "Password is too short"
+                
+            }
+            
+        }
+        
+        self.updateFooter(forSection: 1, newText: text)
         
     }
     
