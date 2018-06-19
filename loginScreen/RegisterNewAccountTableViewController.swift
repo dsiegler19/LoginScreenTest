@@ -24,6 +24,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var pickerView: UIPickerView!
     var favoriteColor: String?
     
+    @IBOutlet weak var createAccountButton: UIButton!
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
         
@@ -63,6 +64,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 5 {
             return colorPickerStackView.bounds.height
+        } else if indexPath.section == 6{
+            return 60
         } else {
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
