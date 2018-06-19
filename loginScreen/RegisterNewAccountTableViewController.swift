@@ -40,7 +40,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
             if let responses = responses, responses.count >= 0 && responses[0] == "valid" {
                 
+                // Invalid credentials (or some other error)
+                let alert = UIAlertController(title: "Account Creation Successful!", message: "Check your email in order to verify your account.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, completion: nil))
                 
+                self.present(alert, animated: true, completion: nil)
                 
             }
             
