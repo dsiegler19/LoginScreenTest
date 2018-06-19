@@ -10,6 +10,12 @@ import UIKit
 
 class RegisterNewAccountTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
+    var isUsernameValid = false
+    var isPasswordValid = false
+    var isConfirmPasswordValid = false
+    var isEmailValid = false
+    var isConfirmEmailValid = false
+    
     @IBOutlet weak var colorPickerStackView: UIStackView!
     @IBOutlet weak var favoriteColorTextField: UITextField!
     
