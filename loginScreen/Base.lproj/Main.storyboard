@@ -311,6 +311,7 @@
                         <outlet property="passwordTextField" destination="MgZ-Nd-ozk" id="xrg-Wh-DEx"/>
                         <outlet property="pickerView" destination="tpV-VD-stF" id="Bpf-dT-uO0"/>
                         <outlet property="usernameTextField" destination="EXG-9I-Ruo" id="aPg-B3-mSQ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegisterSuccessful" id="FDw-9W-oZx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2k-sv-IGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,4 +369,7 @@
             <point key="canvasLocation" x="-42.399999999999999" y="87.706146926536732"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FDw-9W-oZx"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,11 +40,18 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
             if let responses = responses, responses.count >= 0 && responses[0] == "valid" {
                 
-                // Invalid credentials (or some other error)
-                let alert = UIAlertController(title: "Account Creation Successful!", message: "Check your email in order to verify your account.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, completion: nil))
-                
-                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    
+                    let alert = UIAlertController(title: "Account Creation Successful!", message: "Check your email in order to verify your account.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default){ action in
+                        
+                        self.performSegue(withIdentifier: "RegisterSuccessful", sender: self)
+                        
+                    })
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
                 
             }
             
@@ -227,6 +234,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         pickerView.dataSource = self
         
         favoriteColorTextField.text = colors.first!
+        favoriteColor = colors.first!
 
     }
 
