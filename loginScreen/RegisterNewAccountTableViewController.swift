@@ -24,6 +24,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var pickerView: UIPickerView!
     var favoriteColor: String?
     
+    @IBOutlet weak var createAccountButton: UIButton!
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
@@ -132,11 +133,9 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         if indexPath.section == 5 {
             
             return colorPickerStackView.bounds.height
-            
-        }
-        
-        else {
-            
+        } else if indexPath.section == 6{
+            return 60
+        } else {
             return super.tableView(tableView, heightForRowAt: indexPath)
             
         }
@@ -150,7 +149,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         label.textColor = UIColor.red
         
         var text = ""
-        
+
         switch section {
             
         case 0:
@@ -182,6 +181,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        favoriteColorTextField.text = colors.first!
 
     }
 
