@@ -61,29 +61,38 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                         
                         self.tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
                         
+                        print("here")
+                        print(responses)
+                        
                         for reason in responses {
+                            print(reason)
                             
                             switch reason {
                                 
                             case "nonunique_username":
                                 print(1)
-                                self.updateFooter(forSection: 0, newText: "Username already taken!")
+                                self.updateFooter(forSection: 3, newText: "Username already taken")
                             case "nonunique_email":
-                                print(2)
+                                self.updateFooter(forSection: 3, newText: "Email already used for another account")
                             case "invalid_password_hash":
-                                print(3)
+                                self.updateFooter(forSection: 1, newText: "Invalid password")
                             case "username_short":
-                                print(4)
+                                self.updateFooter(forSection: 3, newText: "Username is too short")
                             case "username_long":
-                                print(5)
+                                self.updateFooter(forSection: 3, newText: "Username is too long")
                             case "invalid_email":
-                                print(6)
+                                self.updateFooter(forSection: 3, newText: "Invalid email")
                             case "email_long":
-                                print(7)
+                                self.updateFooter(forSection: 3, newText: "Email too long")
                             default:
-                                print(1000)
+                                let alert = UIAlertController(title: "Unknown Server Error", message: "Sorry, we don't know what happened!", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                
+                                self.present(alert, animated: true, completion: nil)
                                 
                             }
+                            
+                            self.tableView.reloadData()
                             
                         }
                         
@@ -247,19 +256,29 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     func updateFooter(forSection section: Int, newText text: String) {
         
+        print("=========")
+        print(text)
+        
         UIView.setAnimationsEnabled(false)
         self.tableView.beginUpdates()
         
+        print(section)
+        print(self.tableView.footerView(forSection: section))
+        
         if let containerView = self.tableView.footerView(forSection: section) {
+            
+            print("17")
             
             containerView.textLabel!.textColor = UIColor.red
             containerView.textLabel!.text = text
             containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
             containerView.sizeToFit()
             
+            print(containerView.textLabel?.text)
+            
         }
         
-        tableView.endUpdates()
+        self.tableView.endUpdates()
         UIView.setAnimationsEnabled(true)
         
     }
@@ -332,6 +351,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         tableView.tableFooterView = UIView(frame: .zero)
         
         pickerView.delegate = self
@@ -341,6 +361,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         favoriteColor = colors.first!
         
         createAccountButton.isEnabled = false
+        
+        self.tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
 
     }
 
