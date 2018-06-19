@@ -31,10 +31,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 7
+        return colors.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.view.endEditing(true)
         return colors[row]
     }
     
