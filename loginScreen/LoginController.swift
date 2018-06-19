@@ -17,9 +17,7 @@ class LoginController {
     func attemptLogin(_ username: String, _ passwordHash: String, completion: @escaping (UserAccount?) -> Void) {
         
         let verifyURL = baseURL.appendingPathComponent("verify").withQueries(["username": username, "password": passwordHash])!
-        
-        print(verifyURL)
-        
+                
         let task = URLSession.shared.dataTask(with: verifyURL, completionHandler: { (data, response, error) in
             
             let jsonDecoder = JSONDecoder()
