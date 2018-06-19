@@ -97,6 +97,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
         }
         
+        updateButton()
+        
         self.updateFooter(forSection: 0, newText: text)
         
     }
@@ -123,6 +125,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
         }
         
+        updateButton()
+        
         self.updateFooter(forSection: 1, newText: text)
         
     }
@@ -144,6 +148,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             isConfirmPasswordValid = true
             
         }
+        
+        updateButton()
         
         self.updateFooter(forSection: 2, newText: text)
         
@@ -171,6 +177,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
         }
         
+        updateButton()
+        
         self.updateFooter(forSection: 3, newText: text)
         
     }
@@ -192,6 +200,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             isConfirmEmailValid = true
             
         }
+        
+        updateButton()
         
         self.updateFooter(forSection: 4, newText: text)
         
