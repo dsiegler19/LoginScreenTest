@@ -71,6 +71,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
      
         let footerView = UIView(frame: CGRect(x: 0, y: 8, width: tableView.frame.size.width, height: 16))
+        //footerView.tintColor = self.tableView.headerView(forSection: 0)?.tintColor
         
         print(footerView)
         
