@@ -31,7 +31,13 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         // Send POST request to the server
         RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: favoriteColor!) { responses in
             
-            print("here")
+            if let responses = responses, responses.count >= 0 && responses[0] == "valid" {
+                
+                print("YAAAAAS")
+                
+            }
+            
+            
             
         }
         
