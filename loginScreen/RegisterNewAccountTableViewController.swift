@@ -36,6 +36,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         
+        print("HERE")
+        
         // Send POST request to the server
         RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: favoriteColor!) { responses in
             
@@ -123,6 +125,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                 
             }
             
+            self.confirmPasswordChanged(self)
+            
         }
         
         updateButton()
@@ -174,6 +178,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                 isEmailValid = true
                 
             }
+            
+            self.confirmEmailChanged(self)
             
         }
         
@@ -227,11 +233,19 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     }
     
     func updateButton() {
+        
         if isUsernameValid && isPasswordValid && isConfirmPasswordValid && isEmailValid && isConfirmEmailValid {
+            
             createAccountButton.isEnabled = true
-        } else {
-            createAccountButton.isEnabled = false
+            
         }
+        
+        else {
+            
+            createAccountButton.isEnabled = false
+            
+        }
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
