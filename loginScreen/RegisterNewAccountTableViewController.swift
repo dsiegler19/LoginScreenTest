@@ -159,6 +159,14 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
     }
     
+    func updateButton() {
+        if isUsernameValid && isPasswordValid && isConfirmPasswordValid && isEmailValid && isConfirmEmailValid {
+            createAccountButton.isEnabled = true
+        } else {
+            createAccountButton.isEnabled = false
+        }
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 1
