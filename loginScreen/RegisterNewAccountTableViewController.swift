@@ -223,6 +223,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         pickerView.dataSource = self
         
         favoriteColorTextField.text = colors.first!
+        
+        createAccountButton.isEnabled = false
 
     }
 
