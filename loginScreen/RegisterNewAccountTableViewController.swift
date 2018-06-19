@@ -160,16 +160,23 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
         return 1
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         return colors.count
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       
         self.view.endEditing(true)
+        
         return colors[row]
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -184,9 +191,17 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         if indexPath.section == 5 {
             
             return colorPickerStackView.bounds.height
-        } else if indexPath.section == 6{
+            
+        }
+        
+        else if indexPath.section == 6 {
+            
             return 60
-        } else {
+            
+        }
+        
+        else {
+            
             return super.tableView(tableView, heightForRowAt: indexPath)
             
         }
