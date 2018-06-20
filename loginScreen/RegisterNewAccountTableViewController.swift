@@ -27,6 +27,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmEmailTextField: UITextField!
     
+    var sectionToTextField = [Int: UITextField]()
+    
     @IBOutlet weak var pickerView: UIPickerView!
     var favoriteColor: String?
     
@@ -198,7 +200,10 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 2, newText: text)
+        print("in confirm password")
+        print(sender as? RegisterNewAccountTableViewController)
+        
+        self.updateFooter(forSection: 2, newText: text, updateFocus: sender as? RegisterNewAccountTableViewController == nil)
         
     }
     
@@ -256,9 +261,9 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
     }
     
-    func updateFooter(forSection section: Int, newText text: String) {
+    func updateFooter(forSection section: Int, newText text: String, updateFocus: Bool = true) {
         
-        UIView.setAnimationsEnabled(false)
+        // UIView.setAnimationsEnabled(false)
         // self.tableView.beginUpdates()
         
         errorTexts?[section] = text // nope
@@ -268,21 +273,32 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         // self.tableView.reloadInputViews()
         // self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
         // self.tableView.footerView(forSection: 0)
-                
+        
         // self.tableView.endUpdates()
         
         
-        UIView.setAnimationsEnabled(false)
-        self.tableView.beginUpdates()
+        // UIView.setAnimationsEnabled(false)
+        
+        
+        self.tableView.reloadData()
+        // self.usernameTextField.becomeFirstResponder()
+
+        if updateFocus {
+            
+            sectionToTextField[section]!.becomeFirstResponder()
+            
+        }
         
         print(section)
+        
+        // print(section)
         // print(self.tableView(self.tableView, viewForFooterInSection: section))
-        print("IN UPDATE FOOTER")
+        // print("IN UPDATE FOOTER")
         // self.tableView.footerView(forSection: 0).
         
-        if let containerView = tableView.footerView(forSection: section) { //self.tableView(tableView, viewForFooterInSection: section), let label = containerView.subviews.first as? UILabel {
+        /*if let containerView = tableView.footerView(forSection: section) { //self.tableView(tableView, viewForFooterInSection: section), let label = containerView.subviews.first as? UILabel {
             
-            print("17")
+            // print("17")
             
             // label.text = text
             
@@ -293,10 +309,10 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
             // print(containerView.textLabel?.text)
             
-        }
+        }*/
         
-        self.tableView.endUpdates()
-        UIView.setAnimationsEnabled(true)
+        // self.tableView.endUpdates()
+        // UIView.setAnimationsEnabled(true)
         
     }
     
@@ -369,8 +385,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         super.viewDidLoad()
         
-        // tableView.tableFooterView = UIView(frame: .zero)
-        
         pickerView.delegate = self
         pickerView.dataSource = self
         
@@ -383,8 +397,12 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         errorTexts = [Int: String]()
         
-        // self.tableView.dequeueReusableCell(withIdentifier: nil)
-
+        sectionToTextField = [0: self.usernameTextField,
+                              1: self.passwordTextField,
+                              2: self.confirmPasswordTextField,
+                              3: self.emailTextField,
+                              4: self.confirmEmailTextField]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -393,12 +411,12 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     }
     
-    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         print("IN TABLE VIEW")
 
         // maybe try getting the footer view here, modifying it like i do it the ealier method, then returning that
-        if let containerView = self.tableView.footerView(forSection: section) {
+        /*if let containerView = self.tableView.footerView(forSection: section) {
             
             print("IN TABLE VIEW IN THE IF")
             containerView.textLabel!.textColor = UIColor.red
@@ -427,18 +445,22 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
             return view
             
-        }
+        }*/
         
-       /* let view = UIView(frame: CGRect(x: 8, y: 0, width: 100, height: 40))
+        let view = UIView(frame: CGRect(x: 8, y: 0, width: 0, height: 0))
         let label = UILabel(frame: view.frame)
-        label.text = "bla bla bla"
+        
+        label.textColor = UIColor.red
+        label.text = errorTexts?[section]
+        label.font = UIFont(name: label.font.fontName, size: 12)
+
         label.sizeToFit()
         view.addSubview(label)
-        view.frame = CGRect(x: 8, y: 0, width: 100, height: 20)*/
+        view.sizeToFit()
         
-        
-        
-    }*/
+        return view
+
+    }
     
     
     // MARK: - Table view data source

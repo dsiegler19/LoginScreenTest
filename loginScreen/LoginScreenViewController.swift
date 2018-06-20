@@ -34,22 +34,44 @@ class LoginScreenViewController: UIViewController {
                 
                 if let acc = acc {
                     
-                    // User successfully logged in
-                    self.userAccount = acc
-                    self.performSegue(withIdentifier: "LoginSuccessful", sender: nil)
+                    if acc.response == "valid" {
+                        
+                        // User successfully logged in
+                        self.userAccount = acc
+                        self.performSegue(withIdentifier: "LoginSuccessful", sender: nil)
+                        
+                    }
+                    
+                    else if acc.response == "invalid" {
+                        
+                        // Invalid credentials
+                        let alert = UIAlertController(title: "Invalid Credentials", message: "Either your username or password is incorrect", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default){ (action) in
+                            
+                            self.passwordField.text = ""
+                            
+                        })
+
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                    else if acc.response == "unverified" {
+                        
+                        // Unverified account
+                        let alert = UIAlertController(title: "Unverified Account", message: "You have not verified your account. Check your email", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
                     
                 }
                 
                 else {
                     
-                    // Invalid credentials (or some other error)
-                    let alert = UIAlertController(title: "Invalid Credentials", message: "Either your username or password are incorrect", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default){ action in
-                        
-                        self.passwordField.text = nil
-                        
-                    })
-                    
+                    // Unknown error
+                    let alert = UIAlertController(title: "Server Error", message: "We don't know what happened!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     
                 }
@@ -67,7 +89,9 @@ class LoginScreenViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         self.view.endEditing(true)
+        
     }
     
     @IBAction func unwindToLoginScreenViewController(segue: UIStoryboardSegue) {

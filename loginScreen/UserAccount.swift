@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct UserAccount : Codable {
+struct UserAccount: Codable {
     
-    var username: String
-    var color: String
+    var username: String?
+    var color: String?
+    
+    var response: String
     
 }
 
