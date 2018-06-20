@@ -239,7 +239,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Favorite Color" id="mSK-ae-bgc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vxe-vG-gO8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegisterUserCellIdentifier" id="Vxe-vG-gO8">
                                         <rect key="frame" x="0.0" y="572" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vxe-vG-gO8" id="Gjo-cn-vRw">

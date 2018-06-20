@@ -34,6 +34,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
+    var errorTexts: [Int: String]?
+    
     @IBAction func createAccountButtonTapped(_ sender: Any) {
                 
         // Send POST request to the server
@@ -256,25 +258,40 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     func updateFooter(forSection section: Int, newText text: String) {
         
-        print("=========")
-        print(text)
+        UIView.setAnimationsEnabled(false)
+        // self.tableView.beginUpdates()
+        
+        errorTexts?[section] = text // nope
+        
+        // self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        // self.tableView.footerView(forSection: 0)?.reloadInputViews()
+        // self.tableView.reloadInputViews()
+        // self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
+        // self.tableView.footerView(forSection: 0)
+                
+        // self.tableView.endUpdates()
+        
         
         UIView.setAnimationsEnabled(false)
         self.tableView.beginUpdates()
         
         print(section)
-        print(self.tableView.footerView(forSection: section))
+        // print(self.tableView(self.tableView, viewForFooterInSection: section))
+        print("IN UPDATE FOOTER")
+        // self.tableView.footerView(forSection: 0).
         
-        if let containerView = self.tableView.footerView(forSection: section) {
+        if let containerView = tableView.footerView(forSection: section) { //self.tableView(tableView, viewForFooterInSection: section), let label = containerView.subviews.first as? UILabel {
             
             print("17")
+            
+            // label.text = text
             
             containerView.textLabel!.textColor = UIColor.red
             containerView.textLabel!.text = text
             containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
             containerView.sizeToFit()
             
-            print(containerView.textLabel?.text)
+            // print(containerView.textLabel?.text)
             
         }
         
@@ -352,7 +369,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView(frame: .zero)
+        // tableView.tableFooterView = UIView(frame: .zero)
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -362,7 +379,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         createAccountButton.isEnabled = false
         
-        self.tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
+        tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
+        
+        errorTexts = [Int: String]()
+        
+        // self.tableView.dequeueReusableCell(withIdentifier: nil)
 
     }
 
@@ -372,16 +393,65 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     }
     
+    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        print("IN TABLE VIEW")
+
+        // maybe try getting the footer view here, modifying it like i do it the ealier method, then returning that
+        if let containerView = self.tableView.footerView(forSection: section) {
+            
+            print("IN TABLE VIEW IN THE IF")
+            containerView.textLabel!.textColor = UIColor.red
+            containerView.textLabel!.text = "hello"
+            containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
+            containerView.sizeToFit()
+            
+            return containerView
+            
+        }
+        
+        else {
+            
+            print("IN TABLE VIEW IN THE ELSE")
+            
+            /*let newView = UIView(frame: CGRect(x: 8, y: 0, width: 100, height: 40))
+            newView.textLabel!.textColor = UIColor.red
+            newView.textLabel!.text = "other hello"
+            newView.textLabel!.font = UIFont(name: newView.textLabel!.font.fontName, size: 12)*/
+            let view = UIView(frame: CGRect(x: 8, y: 0, width: 100, height: 40))
+            let label = UILabel(frame: view.frame)
+            label.text = "bla bla bla"
+            label.sizeToFit()
+            view.addSubview(label)
+            view.frame = CGRect(x: 8, y: 0, width: 100, height: 20)
+            
+            return view
+            
+        }
+        
+       /* let view = UIView(frame: CGRect(x: 8, y: 0, width: 100, height: 40))
+        let label = UILabel(frame: view.frame)
+        label.text = "bla bla bla"
+        label.sizeToFit()
+        view.addSubview(label)
+        view.frame = CGRect(x: 8, y: 0, width: 100, height: 20)*/
+        
+        
+        
+    }*/
+    
     
     // MARK: - Table view data source
 
     
     /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegisterUserCellIdentifier", for: indexPath)
+        
         // Configure the cell...
         
-        let cell = tableView.cellForRow(at: indexPath)
+        // let cell = tableView.cellForRow(at: indexPath)
+        cell.textLabel?.text = "hello"
+
 
         return cell
     }*/
