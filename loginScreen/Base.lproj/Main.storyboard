@@ -313,6 +313,7 @@
                         <outlet property="favoriteColorTextField" destination="eHT-Fw-6XK" id="lCo-lJ-I1b"/>
                         <outlet property="passwordTextField" destination="MgZ-Nd-ozk" id="xrg-Wh-DEx"/>
                         <outlet property="pickerView" destination="tpV-VD-stF" id="Bpf-dT-uO0"/>
+                        <outlet property="usernameSection" destination="TVS-uP-6Zg" id="b0e-yJ-hlw"/>
                         <outlet property="usernameTextField" destination="EXG-9I-Ruo" id="aPg-B3-mSQ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegisterSuccessful" id="FDw-9W-oZx"/>
                     </connections>

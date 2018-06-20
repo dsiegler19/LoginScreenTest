@@ -15,7 +15,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var isConfirmPasswordValid = false
     var isEmailValid = false
     var isConfirmEmailValid = false
-    
+        
     @IBOutlet weak var colorPickerStackView: UIStackView!
     @IBOutlet weak var favoriteColorTextField: UITextField!
     
@@ -37,6 +37,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
     
     var errorTexts: [Int: String]?
+    
+    let eventManager = EventManager()
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
                 
@@ -112,7 +114,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     @IBAction func usernameChanged(_ sender: Any) {
         
+        print(sender)
+        
         var text = ""
+        
+        self.eventManager.trigger(eventName: "usernameUpdated")
         
         if let username = usernameTextField.text {
             
@@ -144,9 +150,12 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             
         }
         
-        updateButton()
+        self.errorTexts?[0] = text
+        self.eventManager.trigger(eventName: "usernameChanged")
         
-        self.updateFooter(forSection: 0, newText: text)
+        // updateButton()
+        
+        // self.updateFooter(forSection: 0, newText: text)
         
     }
     
@@ -201,9 +210,9 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         updateButton()
         
         print("in confirm password")
-        print(sender as? RegisterNewAccountTableViewController)
+        // print(sender as? RegisterNewAccountTableViewController)
         
-        self.updateFooter(forSection: 2, newText: text, updateFocus: sender as? RegisterNewAccountTableViewController == nil)
+        self.updateFooter(forSection: 2, newText: text)//, updateFocus: sender as? RegisterNewAccountTableViewController == nil)
         
     }
     
@@ -263,9 +272,23 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     
     func updateFooter(forSection section: Int, newText text: String, updateFocus: Bool = true) {
         
-        // UIView.setAnimationsEnabled(false)
-        // self.tableView.beginUpdates()
+        //UIView.setAnimationsEnabled(false)
+        //self.tableView.beginUpdates()
         
+        /*if let containerView = tableView.footerView(forSection: section) { //self.tableView(tableView, viewForFooterInSection: section), let label = containerView.subviews.first as? UILabel {
+         
+         // print("17")
+         
+         // label.text = text
+         
+             containerView.textLabel!.textColor = UIColor.red
+             containerView.textLabel!.text = text
+             containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
+             containerView.sizeToFit()
+         
+         // print(containerView.textLabel?.text)
+        
+        }*/
         errorTexts?[section] = text // nope
         
         // self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
@@ -274,18 +297,16 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         // self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
         // self.tableView.footerView(forSection: 0)
         
-        // self.tableView.endUpdates()
+        //self.tableView.endUpdates()
+        //UIView.setAnimationsEnabled(false)
         
         
-        // UIView.setAnimationsEnabled(false)
-        
-        
-        self.tableView.reloadData()
+        // self.tableView.reloadData()
         // self.usernameTextField.becomeFirstResponder()
 
         if updateFocus {
             
-            sectionToTextField[section]!.becomeFirstResponder()
+            // sectionToTextField[section]!.becomeFirstResponder()
             
         }
         
@@ -397,11 +418,49 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         errorTexts = [Int: String]()
         
+        print("1")
+        
         sectionToTextField = [0: self.usernameTextField,
                               1: self.passwordTextField,
                               2: self.confirmPasswordTextField,
                               3: self.emailTextField,
                               4: self.confirmEmailTextField]
+        
+        print("2")
+        
+        self.eventManager.listenTo(eventName: "usernameUpdated") { () in
+            
+            // self.tableView.reloadData()
+            
+            UIView.setAnimationsEnabled(false)
+            self.tableView.beginUpdates()
+            
+            if let containerView = self.tableView.footerView(forSection: 0) {
+                
+                 // print("17")
+                 
+                 // label.text = text
+                 
+                containerView.textLabel!.textColor = UIColor.red
+                containerView.textLabel!.text = "hello"
+                containerView.textLabel!.font = UIFont(name: containerView.textLabel!.font.fontName, size: 12)
+                containerView.sizeToFit()
+                 
+                 // print(containerView.textLabel?.text)
+             
+             }
+            
+            // self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+            // self.tableView.footerView(forSection: 0)?.reloadInputViews()
+            // self.tableView.reloadInputViews()
+            // self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
+            // self.tableView.footerView(forSection: 0)
+            
+            self.tableView.endUpdates()
+            UIView.setAnimationsEnabled(false)
+            
+            
+        }
         
     }
 
@@ -411,7 +470,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     }
     
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         print("IN TABLE VIEW")
 
@@ -460,7 +519,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         return view
 
-    }
+    }*/
     
     
     // MARK: - Table view data source
