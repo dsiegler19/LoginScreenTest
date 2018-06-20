@@ -38,7 +38,8 @@
 		82451D4020D7FEC700661CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82451D4320D7FEC700661CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82451D4520D7FEC700661CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewAccountTableViewController.swift; sourceTree = "<group>"; };
+		8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RegisterNewAccountTableViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
+		94603C8B20DAD56C00EA8FE5 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		CB5C992AD1C07790C1F7BF67 /* Pods-loginScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginScreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-loginScreen/Pods-loginScreen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
