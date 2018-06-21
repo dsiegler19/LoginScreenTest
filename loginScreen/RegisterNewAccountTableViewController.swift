@@ -16,7 +16,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var isEmailValid = false
     var isConfirmEmailValid = false
 
-    @IBOutlet weak var colorPickerStackView: UIStackView!
+    @IBOutlet weak var rolePickerStackView: UIStackView!
     @IBOutlet weak var roleTextField: UITextField!
 
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -46,7 +46,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     @IBOutlet weak var createAccountButton: UIButton!
 
-    let roles = ["Player", "Parent", "Coach" ,"That one kid only on the team cuz he's related to the coach but sucks and plays right field over someone who is better and then drops an easy pop fly to lose the first game of the tournament and then isnt pulled and goes on to make 4 more errors and the team loses by 7 instead of winning by one because of the time limit which would have happened if he werent so damn slow"]
+    let roles = ["Player", "Parent", "Coach"]
 
     var errorLabels: [Int: UILabel]?
 
@@ -153,7 +153,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
 
-        self.updateFooter(forSection: 0, newText: text)
+        self.updateFooter(forSection: 2, newText: text)
 
     }
 
@@ -183,7 +183,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 1, newText: text)
+        self.updateFooter(forSection: 3, newText: text)
 
     }
 
@@ -207,7 +207,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 2, newText: text)
+        self.updateFooter(forSection: 4, newText: text)
 
     }
 
@@ -241,7 +241,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 3, newText: text)
+        self.updateFooter(forSection: 5, newText: text)
         
     }
 
@@ -265,7 +265,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 4, newText: text)
+        self.updateFooter(forSection: 6, newText: text)
         
     }
 
@@ -295,10 +295,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
             createAccountButton.isEnabled = false
 
-        }
-        
-        for i in 0 ... 10000000 {
-            print("ur mom")
         }
 
     }
@@ -337,7 +333,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         else if indexPath.section == 6 {
             
-            return colorPickerStackView.bounds.height
+            return rolePickerStackView.bounds.height
             
         }
         
