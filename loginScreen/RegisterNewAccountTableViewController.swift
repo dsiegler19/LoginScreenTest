@@ -19,6 +19,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     @IBOutlet weak var colorPickerStackView: UIStackView!
     @IBOutlet weak var favoriteColorTextField: UITextField!
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var firstNameErrorLabel: UILabel!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var lastNameErrorLabel: UILabel!
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameErrorLabel: UILabel!
 
@@ -321,12 +326,12 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.section < 5 {
+        if indexPath.section < 6 {
             
             return 25 + usernameTextField.bounds.height + usernameErrorLabel.bounds.height
         }
         
-        else if indexPath.section == 5 {
+        else if indexPath.section == 6 {
             
             return colorPickerStackView.bounds.height
             
@@ -354,11 +359,13 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
         tableView.setContentOffset(CGPoint(x: 0, y: -15), animated: true)
 
-        errorLabels = [0: self.usernameErrorLabel,
-                      1: self.passwordErrorLabel,
-                      2: self.confirmPasswordErrorLabel,
-                      3: self.emailErrorLabel,
-                      4: self.confirmEmailErrorLabel]
+        errorLabels = [0: self.firstNameErrorLabel,
+                       1: self.lastNameErrorLabel,
+                       2: self.usernameErrorLabel,
+                       3: self.passwordErrorLabel,
+                       4: self.confirmPasswordErrorLabel,
+                       5: self.emailErrorLabel,
+                       6: self.confirmEmailErrorLabel]
 
     }
 
