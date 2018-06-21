@@ -212,11 +212,17 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         if let email = emailTextField.text {
             
+            isEmailValid = false
+            
             if email.count > 45 {
                 
                 text = "Email is too long"
                 
-                isEmailValid = false
+            }
+                
+            else if !NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: email) {
+                
+                text = "Invalid email"
                 
             }
                 
@@ -225,8 +231,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                 isEmailValid = true
                 
             }
-            
-            self.confirmEmailChanged(self)
             
         }
         
