@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="-42.399999999999999" y="87.706146926536732"/>
         </scene>
-        <!--Register New Account Table View Controller-->
+        <!--Title-->
         <scene sceneID="VAO-Tn-FXM">
             <objects>
                 <tableViewController id="QRU-AD-Drx" customClass="RegisterNewAccountTableViewController" customModule="loginScreen" sceneMemberID="viewController">
@@ -132,11 +132,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="iuE-Zd-p1K">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Register New User" id="AyW-5c-Bg8">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bnb-bU-OR6">
+                                        <connections>
+                                            <segue destination="Vc4-cE-Ax8" kind="unwind" unwindAction="unwindToLoginScreenViewControllerWithSegue:" id="4YK-7R-90d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <sections>
                             <tableViewSection headerTitle="Username" id="7qJ-ia-XFg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3XZ-CP-vCl">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3XZ-CP-vCl" id="AxT-rk-Hc4">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -182,7 +195,7 @@
                             <tableViewSection headerTitle="Password" id="4BC-4K-Vqa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Giw-Ix-MFv">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Giw-Ix-MFv" id="wpH-uw-JKC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -229,7 +242,7 @@
                             <tableViewSection headerTitle="Confirm Password" id="IoO-oR-UKB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1Qv-Ur-ofY">
-                                        <rect key="frame" x="0.0" y="172" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="216" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Qv-Ur-ofY" id="ZKB-ni-wWB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -276,7 +289,7 @@
                             <tableViewSection headerTitle="Email" id="gBe-94-kn9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xxE-sA-aOm">
-                                        <rect key="frame" x="0.0" y="244" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="288" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxE-sA-aOm" id="9ki-X9-P4F">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -323,7 +336,7 @@
                             <tableViewSection headerTitle="Confirm Email" id="yLg-bT-E4S">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="n0Y-N6-FBt">
-                                        <rect key="frame" x="0.0" y="316" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="360" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n0Y-N6-FBt" id="Q2E-Jd-PKz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -370,7 +383,7 @@
                             <tableViewSection headerTitle="Favorite Color" id="8Su-Jn-k2v">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oG2-dU-pfb">
-                                        <rect key="frame" x="0.0" y="388" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="432" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oG2-dU-pfb" id="Fr5-GC-8Z6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -411,7 +424,7 @@
                             <tableViewSection headerTitle=" " id="9yA-hx-iEi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qQs-Mh-CAD">
-                                        <rect key="frame" x="0.0" y="460" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="504" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQs-Mh-CAD" id="uV2-3g-5VO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -441,6 +454,7 @@
                             <outlet property="delegate" destination="QRU-AD-Drx" id="ws5-2a-6oc"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="JP2-lm-jPO"/>
                     <connections>
                         <outlet property="colorPickerStackView" destination="lf6-FP-XSB" id="Uxq-Mb-nl1"/>
                         <outlet property="confirmEmailErrorLabel" destination="Qn7-YT-hEa" id="eNd-oM-Y8m"/>
@@ -460,6 +474,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIV-sn-Iia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Vc4-cE-Ax8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2572" y="635"/>
         </scene>
