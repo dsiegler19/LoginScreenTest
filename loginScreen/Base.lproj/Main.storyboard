@@ -538,14 +538,14 @@
                         <outlet property="createAccountButton" destination="kbl-fM-gob" id="0pG-FC-bKs"/>
                         <outlet property="emailErrorLabel" destination="rg3-P0-9cY" id="1IQ-lq-qTP"/>
                         <outlet property="emailTextField" destination="aiJ-rB-OVf" id="6cq-Rx-6Yq"/>
-                        <outlet property="favoriteColorTextField" destination="AWM-Or-d8P" id="f6a-GK-Y7M"/>
+                        <outlet property="firstNameErrorLabel" destination="6J8-O6-WwN" id="ibT-RO-Zbg"/>
+                        <outlet property="firstNameTextField" destination="h5O-gG-dIK" id="fTM-jz-rc4"/>
                         <outlet property="lastNameErrorLabel" destination="tB2-6r-gWL" id="fVh-FR-Rzk"/>
                         <outlet property="lastNameTextField" destination="6fc-k2-lm0" id="VhM-ev-UVV"/>
-                        <outlet property="nameErrorLabel" destination="6J8-O6-WwN" id="ilt-7w-RGg"/>
-                        <outlet property="nameTextField" destination="h5O-gG-dIK" id="NLV-3l-YIw"/>
                         <outlet property="passwordErrorLabel" destination="5GF-WA-cRq" id="MhF-xJ-Ci9"/>
                         <outlet property="passwordTextField" destination="HHN-ai-5Bq" id="YVh-b9-IfW"/>
                         <outlet property="pickerView" destination="81x-Pp-7ho" id="K0W-bL-qSC"/>
+                        <outlet property="roleTextField" destination="AWM-Or-d8P" id="f6a-GK-Y7M"/>
                         <outlet property="usernameErrorLabel" destination="CSA-pC-1xX" id="aQF-n1-Pvf"/>
                         <outlet property="usernameTextField" destination="Cn8-1p-i6i" id="LhO-u6-pxn"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegisterSuccessful" id="PvX-0Q-eYG"/>

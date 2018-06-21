@@ -17,7 +17,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var isConfirmEmailValid = false
 
     @IBOutlet weak var colorPickerStackView: UIStackView!
-    @IBOutlet weak var favoriteColorTextField: UITextField!
+    @IBOutlet weak var roleTextField: UITextField!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var firstNameErrorLabel: UILabel!
@@ -42,11 +42,11 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var sectionToTextField = [Int: UITextField]()
 
     @IBOutlet weak var pickerView: UIPickerView!
-    var favoriteColor: String?
+    var role: String?
 
     @IBOutlet weak var createAccountButton: UIButton!
 
-    let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"]
+    let roles = ["Player", "Parent", "Coach" ,"That one kid only on the team cuz he's related to the coach but sucks and plays right field over someone who is better and then drops an easy pop fly to lose the first game of the tournament and then isnt pulled and goes on to make 4 more errors and the team loses by 7 instead of winning by one because of the time limit which would have happened if he werent so damn slow"]
 
     var errorLabels: [Int: UILabel]?
 
@@ -55,7 +55,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         self.tableView.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
 
         // Send POST request to the server
-        RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: favoriteColor!) { responses in
+        RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: role!) { responses in
 
             if let responses = responses, responses.count >= 0 {
 
@@ -69,7 +69,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
                             self.performSegue(withIdentifier: "RegisterSuccessful", sender: self)
 
                         })
-
+                        
                         self.present(alert, animated: true, completion: nil)
 
                     }
@@ -296,6 +296,10 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
             createAccountButton.isEnabled = false
 
         }
+        
+        for i in 0 ... 10000000 {
+            print("ur mom")
+        }
 
     }
 
@@ -307,20 +311,20 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 
-        return colors.count
+        return roles.count
 
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
-        return colors[row]
+        return roles[row]
 
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-        favoriteColor = colors[row]
-        favoriteColorTextField.text = favoriteColor
+        role = roles[row]
+        roleTextField.text = role
 
     }
 
@@ -352,8 +356,8 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         pickerView.delegate = self
         pickerView.dataSource = self
 
-        favoriteColorTextField.text = colors.first!
-        favoriteColor = colors.first!
+        roleTextField.text? = roles.first!
+        role = roles.first!
 
         createAccountButton.isEnabled = false
 
