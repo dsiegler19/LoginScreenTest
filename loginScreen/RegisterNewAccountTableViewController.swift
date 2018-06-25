@@ -46,7 +46,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
     @IBOutlet weak var createAccountButton: UIButton!
 
-    let roles = ["Player", "Parent", "Coach" ,"That one kid only on the team cuz he's related to the coach but sucks and plays right field over someone who is better and then drops an easy pop fly to lose the first game of the tournament and then isnt pulled and goes on to make 4 more errors and the team loses by 7 instead of winning by one because of the time limit which would have happened if he werent so damn slow"]
+    let roles = ["Player", "Parent", "Coach" ]
 
     var errorLabels: [Int: UILabel]?
 
@@ -295,10 +295,6 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
 
             createAccountButton.isEnabled = false
 
-        }
-        
-        for i in 0 ... 10000000 {
-            print("ur mom")
         }
 
     }
