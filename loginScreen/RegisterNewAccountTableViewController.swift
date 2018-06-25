@@ -16,7 +16,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
     var isEmailValid = false
     var isConfirmEmailValid = false
 
-    @IBOutlet weak var colorPickerStackView: UIStackView!
+    @IBOutlet weak var rolePickerStackView: UIStackView!
     @IBOutlet weak var roleTextField: UITextField!
 
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -153,7 +153,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
 
-        self.updateFooter(forSection: 0, newText: text)
+        self.updateFooter(forSection: 2, newText: text)
 
     }
 
@@ -183,7 +183,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 1, newText: text)
+        self.updateFooter(forSection: 3, newText: text)
 
     }
 
@@ -207,7 +207,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 2, newText: text)
+        self.updateFooter(forSection: 4, newText: text)
 
     }
 
@@ -241,7 +241,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 3, newText: text)
+        self.updateFooter(forSection: 5, newText: text)
         
     }
 
@@ -265,7 +265,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         updateButton()
         
-        self.updateFooter(forSection: 4, newText: text)
+        self.updateFooter(forSection: 6, newText: text)
         
     }
 
@@ -333,7 +333,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         
         else if indexPath.section == 6 {
             
-            return colorPickerStackView.bounds.height
+            return rolePickerStackView.bounds.height
             
         }
         

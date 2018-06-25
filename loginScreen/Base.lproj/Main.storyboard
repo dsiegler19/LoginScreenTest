@@ -470,7 +470,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Favorite Color" id="8Su-Jn-k2v">
+                            <tableViewSection headerTitle="Role" id="8Su-Jn-k2v">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oG2-dU-pfb">
                                         <rect key="frame" x="0.0" y="504" width="414" height="44"/>
@@ -546,7 +546,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="JP2-lm-jPO"/>
                     <connections>
-                        <outlet property="colorPickerStackView" destination="lf6-FP-XSB" id="Uxq-Mb-nl1"/>
                         <outlet property="confirmEmailErrorLabel" destination="Qn7-YT-hEa" id="eNd-oM-Y8m"/>
                         <outlet property="confirmEmailTextField" destination="Nv3-Gd-ZM3" id="gnV-ZC-Tol"/>
                         <outlet property="confirmPasswordErrorLabel" destination="VMn-Tp-AJk" id="trZ-17-tbq"/>
@@ -561,6 +560,7 @@
                         <outlet property="passwordErrorLabel" destination="5GF-WA-cRq" id="MhF-xJ-Ci9"/>
                         <outlet property="passwordTextField" destination="HHN-ai-5Bq" id="YVh-b9-IfW"/>
                         <outlet property="pickerView" destination="81x-Pp-7ho" id="K0W-bL-qSC"/>
+                        <outlet property="rolePickerStackView" destination="lf6-FP-XSB" id="Uxq-Mb-nl1"/>
                         <outlet property="roleTextField" destination="AWM-Or-d8P" id="f6a-GK-Y7M"/>
                         <outlet property="usernameErrorLabel" destination="CSA-pC-1xX" id="aQF-n1-Pvf"/>
                         <outlet property="usernameTextField" destination="Cn8-1p-i6i" id="LhO-u6-pxn"/>
