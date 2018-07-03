@@ -7,5 +7,6 @@ target 'loginScreen' do
 
   # Pods for loginScreen
   pod 'SwiftHash'
+  pod 'Alamofire', '~> 4.7'
 
 end

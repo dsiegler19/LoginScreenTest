@@ -12,7 +12,7 @@ class LoginController {
     
     static let shared = LoginController()
     
-    let baseURL = URL(string: "http://localhost:8080/")!
+    let baseURL = URL(string: "http://localhost:5000/")!
     
     func attemptLogin(_ username: String, _ passwordHash: String, completion: @escaping (UserAccount?) -> Void) {
         
