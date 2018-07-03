@@ -13,7 +13,7 @@ struct RegisterNewAccountController {
     
     static let shared = RegisterNewAccountController()
     
-    let baseURL = URL(string: "http://localhost:8080/")!
+    let baseURL = URL(string: "http://localhost:5000/")!
     
     func attemptRegisterNewUser(username: String, passwordString: String, email: String, color: String, completion: @escaping ([String]?) -> Void) {
         
