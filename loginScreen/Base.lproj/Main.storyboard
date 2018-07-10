@@ -54,29 +54,49 @@
                                     <constraint firstItem="Rez-Ov-dgg" firstAttribute="width" secondItem="lW1-Jg-sdl" secondAttribute="width" id="uoe-SR-Yc5"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-h8-r6W">
-                                <rect key="frame" x="130" y="686" width="154" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-h8-r6W">
+                                <rect key="frame" x="130" y="690" width="154" height="30"/>
                                 <state key="normal" title="Image Uploader Demo"/>
                                 <connections>
                                     <segue destination="2G3-FK-lNN" kind="show" id="krR-oc-yKM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpP-Vp-AN1">
-                                <rect key="frame" x="148" y="592" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpP-Vp-AN1">
+                                <rect key="frame" x="148" y="644" width="119" height="30"/>
                                 <state key="normal" title="Video Player Test"/>
                                 <connections>
                                     <segue destination="K7p-hL-EZ6" kind="show" id="h8U-F8-PPo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf4-8n-8XH">
+                                <rect key="frame" x="170" y="598" width="75" height="30"/>
+                                <state key="normal" title="Map Demo"/>
+                                <connections>
+                                    <segue destination="Eqy-p3-lbb" kind="show" id="wr3-J4-4ca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-3d-wPN">
+                                <rect key="frame" x="150" y="552" width="115" height="30"/>
+                                <state key="normal" title="Card View Demo"/>
+                                <connections>
+                                    <segue destination="j8g-ou-auS" kind="show" id="h67-vb-2e4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nf4-8n-8XH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Su-0E-njc"/>
+                            <constraint firstItem="TpP-Vp-AN1" firstAttribute="top" secondItem="nf4-8n-8XH" secondAttribute="bottom" constant="16" id="IV6-cH-ekP"/>
                             <constraint firstItem="lW1-Jg-sdl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KpA-Ec-Ht4"/>
+                            <constraint firstItem="A2a-3d-wPN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PBZ-Hs-Dcg"/>
                             <constraint firstItem="lW1-Jg-sdl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="Udn-8c-U0c"/>
                             <constraint firstItem="lW1-Jg-sdl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XHD-OS-PPM"/>
+                            <constraint firstItem="cCD-h8-r6W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ybm-sD-Gvb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cCD-h8-r6W" secondAttribute="bottom" constant="16" id="h68-5k-qic"/>
+                            <constraint firstItem="cCD-h8-r6W" firstAttribute="top" secondItem="TpP-Vp-AN1" secondAttribute="bottom" constant="16" id="kgP-cZ-JRy"/>
+                            <constraint firstItem="TpP-Vp-AN1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="swb-Y2-adE"/>
                             <constraint firstItem="lW1-Jg-sdl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5Q-0f-Gf1"/>
+                            <constraint firstItem="nf4-8n-8XH" firstAttribute="top" secondItem="A2a-3d-wPN" secondAttribute="bottom" constant="16" id="xi7-lA-xni"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -120,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bk9-x1-em8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-370.16491754122939"/>
+            <point key="canvasLocation" x="1819" y="-664"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IiC-Zj-2sf">
@@ -174,7 +194,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4287" y="240"/>
+            <point key="canvasLocation" x="5286" y="256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bYR-pC-vh9">
@@ -231,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKn-iA-rYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="890"/>
+            <point key="canvasLocation" x="-846" y="840"/>
         </scene>
         <!--Video Player View Controller-->
         <scene sceneID="2Bq-jd-KdM">
@@ -256,7 +276,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccp-hq-rOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5652173913045" y="888.58695652173924"/>
+            <point key="canvasLocation" x="610" y="1215"/>
+        </scene>
+        <!--Message Display Table Table View Controller-->
+        <scene sceneID="MjO-1R-1V5">
+            <objects>
+                <tableViewController id="j8g-ou-auS" customClass="MessageDisplayTableTableViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yx1-jt-D6h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="100" id="PT1-Hu-SBW" customClass="MessageDisplayTableViewCell" customModule="loginScreen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PT1-Hu-SBW" id="JjZ-XJ-Rwg">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFP" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-iu-n3r">
+                                            <rect key="frame" x="8" y="0.0" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="5Ge-Sz-T2l"/>
+                                                <constraint firstAttribute="height" constant="60" id="Uih-FS-Fga"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="leading" secondItem="JjZ-XJ-Rwg" secondAttribute="leading" constant="8" id="aaG-Ld-pHP"/>
+                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="top" secondItem="JjZ-XJ-Rwg" secondAttribute="top" id="iOA-jN-uBl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePicture" destination="iJK-iu-n3r" id="mcW-BZ-SUC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="j8g-ou-auS" id="WvF-dy-aB4"/>
+                            <outlet property="delegate" destination="j8g-ou-auS" id="l6F-jB-Rol"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSg-TB-ffr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592.753623188406" y="1167.3913043478262"/>
+        </scene>
+        <!--Map Demo View Controller-->
+        <scene sceneID="Apv-Wl-hpV">
+            <objects>
+                <viewController id="Eqy-p3-lbb" customClass="MapDemoViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H9N-4Q-9ni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Ds-Hj-BPQ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efW-b0-PJj">
+                                <rect key="frame" x="0.0" y="378" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wAd-u9-zk5"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="7Ds-Hj-BPQ" id="rJn-qE-CW5"/>
+                        <outlet property="rangePickerView" destination="efW-b0-PJj" id="lVx-cq-d02"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4d-RO-lfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="1021"/>
         </scene>
         <!--Title-->
         <scene sceneID="VAO-Tn-FXM">
@@ -688,7 +781,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIV-sn-Iia" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Vc4-cE-Ax8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="518"/>
+            <point key="canvasLocation" x="1819" y="87"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iws-zr-YiU">
@@ -708,7 +801,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2k-bC-1b4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3003" y="240"/>
+            <point key="canvasLocation" x="4286" y="256"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JAt-Fq-0wH">
@@ -749,7 +842,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxH-Zj-r2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <rotationGestureRecognizer id="47i-iu-GKO"/>
             </objects>
-            <point key="canvasLocation" x="4286.9565217391309" y="-524.18478260869574"/>
+            <point key="canvasLocation" x="5286" y="-508"/>
         </scene>
         <!--Item-->
         <scene sceneID="1oe-Lg-ewp">
@@ -774,7 +867,11 @@
             <point key="canvasLocation" x="4286.9565217391309" y="1064.6739130434783"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PFP" width="191" height="191"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rOJ-Rt-eSj"/>
         <segue reference="PvX-0Q-eYG"/>
     </inferredMetricsTieBreakers>
 </document>

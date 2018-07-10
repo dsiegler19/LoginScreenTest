@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4409AE9520F3A7850024EDAA /* MapDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409AE9420F3A7850024EDAA /* MapDemoViewController.swift */; };
+		4409AE9920F3ADCF0024EDAA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409AE9820F3ADCF0024EDAA /* Team.swift */; };
+		4409AE9B20F3B8FD0024EDAA /* MapDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409AE9A20F3B8FD0024EDAA /* MapDemoController.swift */; };
+		4409AE9D20F3EB1B0024EDAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409AE9C20F3EB1B0024EDAA /* Constants.swift */; };
+		441963FA20F51EAC008C1254 /* MessageDisplayTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441963F920F51EAC008C1254 /* MessageDisplayTableTableViewController.swift */; };
 		44509B3D20E6763900703F9E /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44509B3C20E6763900703F9E /* VideoView.swift */; };
 		44509B3F20E677DB00703F9E /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44509B3E20E677DB00703F9E /* VideoPlayerViewController.swift */; };
 		4468B76D20D82A2600B57D44 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468B76C20D82A2600B57D44 /* URL+Helpers.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4409AE9420F3A7850024EDAA /* MapDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoViewController.swift; sourceTree = "<group>"; };
+		4409AE9820F3ADCF0024EDAA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		4409AE9A20F3B8FD0024EDAA /* MapDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoController.swift; sourceTree = "<group>"; };
+		4409AE9C20F3EB1B0024EDAA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		441963F920F51EAC008C1254 /* MessageDisplayTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayTableTableViewController.swift; sourceTree = "<group>"; };
 		44509B3C20E6763900703F9E /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		44509B3E20E677DB00703F9E /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		4468B76C20D82A2600B57D44 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
@@ -68,6 +78,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4409AE9620F3A78E0024EDAA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				441963F920F51EAC008C1254 /* MessageDisplayTableTableViewController.swift */,
+				44DD85FB20D8480C00F6A9CE /* ColorViewController.swift */,
+				4409AE9420F3A7850024EDAA /* MapDemoViewController.swift */,
+				44509B3E20E677DB00703F9E /* VideoPlayerViewController.swift */,
+				44838A3320E1358B001B7057 /* ImagePickerViewController.swift */,
+				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
+				8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4409AE9720F3A7AE0024EDAA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4468B76E20D82B5700B57D44 /* LoginController.swift */,
+				44F964B820D93F5D008056AD /* RegisterNewAccountController.swift */,
+				4409AE9A20F3B8FD0024EDAA /* MapDemoController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		82451D2D20D7FEC200661CE2 = {
 			isa = PBXGroup;
 			children = (
@@ -89,22 +123,19 @@
 		82451D3820D7FEC300661CE2 /* loginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4409AE9720F3A7AE0024EDAA /* Controllers */,
+				4409AE9620F3A78E0024EDAA /* View Controllers */,
 				82451D3920D7FEC300661CE2 /* AppDelegate.swift */,
 				82451D3D20D7FEC300661CE2 /* Main.storyboard */,
-				44509B3C20E6763900703F9E /* VideoView.swift */,
-				44509B3E20E677DB00703F9E /* VideoPlayerViewController.swift */,
-				44838A3320E1358B001B7057 /* ImagePickerViewController.swift */,
-				4474634620D81AC500557888 /* LoginScreenViewController.swift */,
-				8293D80B20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift */,
 				4468B76C20D82A2600B57D44 /* URL+Helpers.swift */,
+				44DD85F920D847F000F6A9CE /* UserAccount.swift */,
+				44838A3520E14666001B7057 /* UIImage+Helpers.swift */,
+				44509B3C20E6763900703F9E /* VideoView.swift */,
+				4409AE9820F3ADCF0024EDAA /* Team.swift */,
+				4409AE9C20F3EB1B0024EDAA /* Constants.swift */,
 				82451D4020D7FEC700661CE2 /* Assets.xcassets */,
 				82451D4220D7FEC700661CE2 /* LaunchScreen.storyboard */,
 				82451D4520D7FEC700661CE2 /* Info.plist */,
-				4468B76E20D82B5700B57D44 /* LoginController.swift */,
-				44DD85F920D847F000F6A9CE /* UserAccount.swift */,
-				44DD85FB20D8480C00F6A9CE /* ColorViewController.swift */,
-				44F964B820D93F5D008056AD /* RegisterNewAccountController.swift */,
-				44838A3520E14666001B7057 /* UIImage+Helpers.swift */,
 			);
 			path = loginScreen;
 			sourceTree = "<group>";
@@ -234,14 +265,19 @@
 			files = (
 				44838A3420E1358B001B7057 /* ImagePickerViewController.swift in Sources */,
 				8293D80C20D83FBB004F9B16 /* RegisterNewAccountTableViewController.swift in Sources */,
+				4409AE9920F3ADCF0024EDAA /* Team.swift in Sources */,
 				44F964B920D93F5D008056AD /* RegisterNewAccountController.swift in Sources */,
 				44838A3620E14666001B7057 /* UIImage+Helpers.swift in Sources */,
 				82451D3A20D7FEC300661CE2 /* AppDelegate.swift in Sources */,
 				44DD85FA20D847F000F6A9CE /* UserAccount.swift in Sources */,
+				4409AE9D20F3EB1B0024EDAA /* Constants.swift in Sources */,
 				4468B76F20D82B5700B57D44 /* LoginController.swift in Sources */,
+				441963FA20F51EAC008C1254 /* MessageDisplayTableTableViewController.swift in Sources */,
 				44DD85FC20D8480C00F6A9CE /* ColorViewController.swift in Sources */,
 				4468B76D20D82A2600B57D44 /* URL+Helpers.swift in Sources */,
 				44509B3F20E677DB00703F9E /* VideoPlayerViewController.swift in Sources */,
+				4409AE9B20F3B8FD0024EDAA /* MapDemoController.swift in Sources */,
+				4409AE9520F3A7850024EDAA /* MapDemoViewController.swift in Sources */,
 				44509B3D20E6763900703F9E /* VideoView.swift in Sources */,
 				4474634720D81AC500557888 /* LoginScreenViewController.swift in Sources */,
 			);

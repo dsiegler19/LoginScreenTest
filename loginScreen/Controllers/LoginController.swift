@@ -12,11 +12,9 @@ class LoginController {
     
     static let shared = LoginController()
     
-    let baseURL = URL(string: "http://localhost:5000/")!
-    
     func attemptLogin(_ username: String, _ passwordHash: String, completion: @escaping (UserAccount?) -> Void) {
         
-        let loginURL = baseURL.appendingPathComponent("login").withQueries(["username": username, "password": passwordHash])!
+        let loginURL = Constants.SERVER_URL.appendingPathComponent("login").withQueries(["username": username, "password": passwordHash])!
                         
         let task = URLSession.shared.dataTask(with: loginURL, completionHandler: { (data, response, error) in
             
