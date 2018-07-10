@@ -278,28 +278,38 @@
             </objects>
             <point key="canvasLocation" x="610" y="1215"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Message Display Table Table View Controller-->
         <scene sceneID="MjO-1R-1V5">
             <objects>
-                <tableViewController id="j8g-ou-auS" sceneMemberID="viewController">
+                <tableViewController id="j8g-ou-auS" customClass="MessageDisplayTableTableViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yx1-jt-D6h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="105" id="PT1-Hu-SBW">
-                                <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="100" id="PT1-Hu-SBW" customClass="MessageDisplayTableViewCell" customModule="loginScreen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PT1-Hu-SBW" id="JjZ-XJ-Rwg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="104.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PFP" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-iu-n3r">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFP" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-iu-n3r">
+                                            <rect key="frame" x="8" y="0.0" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="5Ge-Sz-T2l"/>
+                                                <constraint firstAttribute="height" constant="60" id="Uih-FS-Fga"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="leading" secondItem="JjZ-XJ-Rwg" secondAttribute="leading" constant="8" id="aaG-Ld-pHP"/>
+                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="top" secondItem="JjZ-XJ-Rwg" secondAttribute="top" id="iOA-jN-uBl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePicture" destination="iJK-iu-n3r" id="mcW-BZ-SUC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -863,6 +873,7 @@
         <image name="PFP" width="191" height="191"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rOJ-Rt-eSj"/>
         <segue reference="PvX-0Q-eYG"/>
     </inferredMetricsTieBreakers>
 </document>

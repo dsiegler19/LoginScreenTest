@@ -13,7 +13,7 @@ class MessageDisplayTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,25 +24,35 @@ class MessageDisplayTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
 
-        return 1
+        return 2
         
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 5
+        return 1
         
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageDisplayTableViewCell
 
-        // Configure the cell...
-
+        configure(cell: cell)
+                
         return cell
+        
     }
-    */
+    
+    private func configure(cell: MessageDisplayTableViewCell) -> MessageDisplayTableViewCell {
+        
+        cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width / 2
+        cell.profilePicture.clipsToBounds = true
+        
+        return cell
+        
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,4 +99,10 @@ class MessageDisplayTableTableViewController: UITableViewController {
     }
     */
 
+}
+
+class MessageDisplayTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    
 }
