@@ -13,8 +13,6 @@ struct RegisterNewAccountController {
     
     static let shared = RegisterNewAccountController()
     
-    let baseURL = URL(string: "http://localhost:5000/")!
-    
     func attemptRegisterNewUser(username: String, passwordString: String, email: String, color: String, completion: @escaping ([String]?) -> Void) {
         
         let passwordHash = MD5(passwordString).lowercased()
@@ -24,7 +22,7 @@ struct RegisterNewAccountController {
                        "email": email,
                        "color": color]
         
-        let registerURL = baseURL.appendingPathComponent("register")
+        let registerURL = Constants.SERVER_URL.appendingPathComponent("register")
         
         var request = URLRequest(url: registerURL)
         request.httpMethod = "POST"
