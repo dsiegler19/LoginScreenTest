@@ -79,7 +79,7 @@
                                 <rect key="frame" x="150" y="552" width="115" height="30"/>
                                 <state key="normal" title="Card View Demo"/>
                                 <connections>
-                                    <segue destination="j8g-ou-auS" kind="show" id="h67-vb-2e4"/>
+                                    <segue destination="j8g-ou-auS" kind="show" id="Dm9-Wy-Z7p"/>
                                 </connections>
                             </button>
                         </subviews>

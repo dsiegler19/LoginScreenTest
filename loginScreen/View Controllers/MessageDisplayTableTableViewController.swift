@@ -24,7 +24,7 @@ class MessageDisplayTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
 
-        return 2
+        return 1
         
     }
 
@@ -36,9 +36,9 @@ class MessageDisplayTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageDisplayTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageDisplayTableViewCell
 
-        configure(cell: cell)
+        cell = configure(cell: cell)
                 
         return cell
         
