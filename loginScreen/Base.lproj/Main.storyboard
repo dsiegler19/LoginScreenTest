@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -79,8 +80,13 @@
                                 <rect key="frame" x="150" y="552" width="115" height="30"/>
                                 <state key="normal" title="Card View Demo"/>
                                 <connections>
-                                    <segue destination="j8g-ou-auS" kind="show" id="Dm9-Wy-Z7p"/>
+                                    <segue destination="wzT-yY-Rkd" kind="show" id="1Rp-2D-Vuq"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-Tm-OTK">
+                                <rect key="frame" x="170" y="514" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Scroll view"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -278,49 +284,106 @@
             </objects>
             <point key="canvasLocation" x="610" y="1215"/>
         </scene>
-        <!--Message Display Table Table View Controller-->
-        <scene sceneID="MjO-1R-1V5">
+        <!--Message View Display View Controller-->
+        <scene sceneID="kO3-lO-vQ8">
             <objects>
-                <tableViewController id="j8g-ou-auS" customClass="MessageDisplayTableTableViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yx1-jt-D6h">
+                <viewController id="wzT-yY-Rkd" customClass="MessageViewDisplayViewController" customModule="loginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hdv-NR-kAM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="100" id="PT1-Hu-SBW" customClass="MessageDisplayTableViewCell" customModule="loginScreen" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PT1-Hu-SBW" id="JjZ-XJ-Rwg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PFP" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-iu-n3r">
-                                            <rect key="frame" x="8" y="0.0" width="60" height="60"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="5Ge-Sz-T2l"/>
-                                                <constraint firstAttribute="height" constant="60" id="Uih-FS-Fga"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="leading" secondItem="JjZ-XJ-Rwg" secondAttribute="leading" constant="8" id="aaG-Ld-pHP"/>
-                                        <constraint firstItem="iJK-iu-n3r" firstAttribute="top" secondItem="JjZ-XJ-Rwg" secondAttribute="top" id="iOA-jN-uBl"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-U0-tEW">
+                                <rect key="frame" x="0.0" y="20" width="414" height="30"/>
+                                <state key="normal" title="Picker View Test"/>
                                 <connections>
-                                    <outlet property="profilePicture" destination="iJK-iu-n3r" id="mcW-BZ-SUC"/>
+                                    <action selector="onPickerViewTestTapped:" destination="wzT-yY-Rkd" eventType="touchUpInside" id="La3-8I-h9K"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="j8g-ou-auS" id="WvF-dy-aB4"/>
-                            <outlet property="delegate" destination="j8g-ou-auS" id="l6F-jB-Rol"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DSg-TB-ffr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-oU-rrk">
+                                <rect key="frame" x="0.0" y="520" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eri-3A-SNm">
+                                <rect key="frame" x="0.0" y="50" width="414" height="686"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="SVf-Rg-ymX" customClass="MessageTableViewCell" customModule="loginScreen" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SVf-Rg-ymX" id="4KD-sp-jNq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultPFP" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-TM-Vh2">
+                                                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="09L-Nn-p6k"/>
+                                                        <constraint firstAttribute="width" constant="40" id="ZQO-Ez-x6F"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-D5-2I4">
+                                                    <rect key="frame" x="56" y="4" width="350" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-Bs-vB4">
+                                                    <rect key="frame" x="56" y="8" width="306" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U0Z-D5-2I4" firstAttribute="top" secondItem="4KD-sp-jNq" secondAttribute="top" constant="4" id="QAW-9P-Den"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XCD-Bs-vB4" secondAttribute="trailing" constant="32" id="S8J-dB-ae4"/>
+                                                <constraint firstItem="EHa-TM-Vh2" firstAttribute="top" secondItem="4KD-sp-jNq" secondAttribute="top" constant="8" id="aFr-O7-ocX"/>
+                                                <constraint firstItem="U0Z-D5-2I4" firstAttribute="leading" secondItem="EHa-TM-Vh2" secondAttribute="trailing" constant="8" id="dKF-Kv-Tag"/>
+                                                <constraint firstItem="EHa-TM-Vh2" firstAttribute="leading" secondItem="4KD-sp-jNq" secondAttribute="leading" constant="8" id="eYb-R9-AIx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XCD-Bs-vB4" secondAttribute="bottom" constant="8" id="wcO-2K-1cD"/>
+                                                <constraint firstItem="XCD-Bs-vB4" firstAttribute="top" secondItem="U0Z-D5-2I4" secondAttribute="bottom" constant="4" id="xjG-zM-gDo"/>
+                                                <constraint firstAttribute="trailing" secondItem="U0Z-D5-2I4" secondAttribute="trailing" constant="8" id="y0e-92-hUW"/>
+                                                <constraint firstItem="XCD-Bs-vB4" firstAttribute="leading" secondItem="EHa-TM-Vh2" secondAttribute="trailing" constant="8" id="zCd-fd-Dy2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="XCD-Bs-vB4" id="Yto-Mt-dtQ"/>
+                                            <outlet property="profilePicture" destination="EHa-TM-Vh2" id="A3y-cL-N0G"/>
+                                            <outlet property="teamNameLabel" destination="U0Z-D5-2I4" id="ngB-jI-3Va"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wzT-yY-Rkd" id="2jt-iM-yw3"/>
+                                    <outlet property="delegate" destination="wzT-yY-Rkd" id="fz0-8V-6zC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Eri-3A-SNm" firstAttribute="bottom" secondItem="Vth-jo-dBE" secondAttribute="bottom" id="DvU-tD-FnC"/>
+                            <constraint firstItem="Zey-U0-tEW" firstAttribute="top" secondItem="Vth-jo-dBE" secondAttribute="top" id="Nd7-PG-CFG"/>
+                            <constraint firstItem="Eri-3A-SNm" firstAttribute="top" secondItem="Zey-U0-tEW" secondAttribute="bottom" id="ShL-g2-hpM"/>
+                            <constraint firstItem="Eri-3A-SNm" firstAttribute="width" secondItem="hdv-NR-kAM" secondAttribute="width" id="WVK-Le-NPr"/>
+                            <constraint firstItem="Zey-U0-tEW" firstAttribute="width" secondItem="hdv-NR-kAM" secondAttribute="width" id="lOu-SW-83f"/>
+                            <constraint firstItem="Eri-3A-SNm" firstAttribute="centerX" secondItem="hdv-NR-kAM" secondAttribute="centerX" id="oWP-c9-HkX"/>
+                            <constraint firstItem="Zey-U0-tEW" firstAttribute="centerX" secondItem="hdv-NR-kAM" secondAttribute="centerX" id="xWR-j3-sNP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vth-jo-dBE"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8Zq-oU-rrk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pickerViewTest" destination="8Zq-oU-rrk" id="h98-L6-2w4"/>
+                        <outlet property="tableView" destination="Eri-3A-SNm" id="g0P-xu-Bof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W32-0h-UkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592.753623188406" y="1167.3913043478262"/>
+            <point key="canvasLocation" x="1634.7826086956522" y="1161.6847826086957"/>
         </scene>
         <!--Map Demo View Controller-->
         <scene sceneID="Apv-Wl-hpV">
@@ -870,7 +933,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PFP" width="191" height="191"/>
+        <image name="DefaultPFP" width="214" height="214"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rOJ-Rt-eSj"/>
