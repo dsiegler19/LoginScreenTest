@@ -83,11 +83,6 @@
                                     <segue destination="wzT-yY-Rkd" kind="show" id="1Rp-2D-Vuq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-Tm-OTK">
-                                <rect key="frame" x="170" y="514" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Scroll view"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -229,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-bC-YiX">
-                                <rect key="frame" x="0.0" y="20" width="414" height="686"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="642"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zX-UB-sIT">
                                 <rect key="frame" x="0.0" y="706" width="414" height="30"/>
@@ -292,19 +287,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-U0-tEW">
-                                <rect key="frame" x="0.0" y="20" width="414" height="30"/>
-                                <state key="normal" title="Picker View Test"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-U0-tEW">
+                                <rect key="frame" x="0.0" y="64" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ZJz-aX-0QS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="u79-5o-wMX" userLabel="width ≥ 75"/>
+                                </constraints>
+                                <state key="normal" title=" Pin"/>
                                 <connections>
-                                    <action selector="onPickerViewTestTapped:" destination="wzT-yY-Rkd" eventType="touchUpInside" id="La3-8I-h9K"/>
+                                    <action selector="filterButtonTapped:" destination="wzT-yY-Rkd" eventType="touchUpInside" id="P5w-0s-UyH"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-oU-rrk">
-                                <rect key="frame" x="0.0" y="520" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eri-3A-SNm">
-                                <rect key="frame" x="0.0" y="50" width="414" height="686"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="637"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="SVf-Rg-ymX" customClass="MessageTableViewCell" customModule="loginScreen" customModuleProvider="target">
@@ -321,9 +316,9 @@
                                                         <constraint firstAttribute="width" constant="40" id="ZQO-Ez-x6F"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-D5-2I4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name  • Time Ago Posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-D5-2I4">
                                                     <rect key="frame" x="56" y="4" width="350" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -333,23 +328,35 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgc-WI-Mwl">
+                                                    <rect key="frame" x="0.0" y="29" width="414" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="hWg-MX-ihZ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="kgc-WI-Mwl" firstAttribute="top" secondItem="XCD-Bs-vB4" secondAttribute="bottom" constant="4" id="Oby-ZY-Dtt"/>
                                                 <constraint firstItem="U0Z-D5-2I4" firstAttribute="top" secondItem="4KD-sp-jNq" secondAttribute="top" constant="4" id="QAW-9P-Den"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XCD-Bs-vB4" secondAttribute="trailing" constant="32" id="S8J-dB-ae4"/>
-                                                <constraint firstItem="EHa-TM-Vh2" firstAttribute="top" secondItem="4KD-sp-jNq" secondAttribute="top" constant="8" id="aFr-O7-ocX"/>
                                                 <constraint firstItem="U0Z-D5-2I4" firstAttribute="leading" secondItem="EHa-TM-Vh2" secondAttribute="trailing" constant="8" id="dKF-Kv-Tag"/>
                                                 <constraint firstItem="EHa-TM-Vh2" firstAttribute="leading" secondItem="4KD-sp-jNq" secondAttribute="leading" constant="8" id="eYb-R9-AIx"/>
+                                                <constraint firstItem="EHa-TM-Vh2" firstAttribute="top" secondItem="4KD-sp-jNq" secondAttribute="top" constant="8" id="lrP-pH-Fbu"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XCD-Bs-vB4" secondAttribute="bottom" constant="8" id="wcO-2K-1cD"/>
                                                 <constraint firstItem="XCD-Bs-vB4" firstAttribute="top" secondItem="U0Z-D5-2I4" secondAttribute="bottom" constant="4" id="xjG-zM-gDo"/>
                                                 <constraint firstAttribute="trailing" secondItem="U0Z-D5-2I4" secondAttribute="trailing" constant="8" id="y0e-92-hUW"/>
                                                 <constraint firstItem="XCD-Bs-vB4" firstAttribute="leading" secondItem="EHa-TM-Vh2" secondAttribute="trailing" constant="8" id="zCd-fd-Dy2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="kgc-WI-Mwl" firstAttribute="centerX" secondItem="SVf-Rg-ymX" secondAttribute="centerX" id="2wf-GZ-bLq"/>
+                                            <constraint firstItem="kgc-WI-Mwl" firstAttribute="width" secondItem="SVf-Rg-ymX" secondAttribute="width" id="z6e-kg-DBS"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="grayFooter" destination="kgc-WI-Mwl" id="JeL-Fl-Uqe"/>
                                             <outlet property="messageLabel" destination="XCD-Bs-vB4" id="Yto-Mt-dtQ"/>
                                             <outlet property="profilePicture" destination="EHa-TM-Vh2" id="A3y-cL-N0G"/>
-                                            <outlet property="teamNameLabel" destination="U0Z-D5-2I4" id="ngB-jI-3Va"/>
+                                            <outlet property="teamNameAndTimePosted" destination="U0Z-D5-2I4" id="ngB-jI-3Va"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -363,21 +370,16 @@
                         <constraints>
                             <constraint firstItem="Eri-3A-SNm" firstAttribute="bottom" secondItem="Vth-jo-dBE" secondAttribute="bottom" id="DvU-tD-FnC"/>
                             <constraint firstItem="Zey-U0-tEW" firstAttribute="top" secondItem="Vth-jo-dBE" secondAttribute="top" id="Nd7-PG-CFG"/>
+                            <constraint firstItem="Zey-U0-tEW" firstAttribute="leading" secondItem="Vth-jo-dBE" secondAttribute="leading" id="QiM-4s-uFJ"/>
                             <constraint firstItem="Eri-3A-SNm" firstAttribute="top" secondItem="Zey-U0-tEW" secondAttribute="bottom" id="ShL-g2-hpM"/>
                             <constraint firstItem="Eri-3A-SNm" firstAttribute="width" secondItem="hdv-NR-kAM" secondAttribute="width" id="WVK-Le-NPr"/>
-                            <constraint firstItem="Zey-U0-tEW" firstAttribute="width" secondItem="hdv-NR-kAM" secondAttribute="width" id="lOu-SW-83f"/>
+                            <constraint firstItem="Vth-jo-dBE" firstAttribute="trailing" secondItem="Zey-U0-tEW" secondAttribute="trailing" constant="339" id="mgI-PV-r4P"/>
                             <constraint firstItem="Eri-3A-SNm" firstAttribute="centerX" secondItem="hdv-NR-kAM" secondAttribute="centerX" id="oWP-c9-HkX"/>
-                            <constraint firstItem="Zey-U0-tEW" firstAttribute="centerX" secondItem="hdv-NR-kAM" secondAttribute="centerX" id="xWR-j3-sNP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vth-jo-dBE"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="8Zq-oU-rrk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="pickerViewTest" destination="8Zq-oU-rrk" id="h98-L6-2w4"/>
+                        <outlet property="filterButton" destination="Zey-U0-tEW" id="Oi1-E4-CkM"/>
                         <outlet property="tableView" destination="Eri-3A-SNm" id="g0P-xu-Bof"/>
                     </connections>
                 </viewController>
@@ -936,7 +938,6 @@
         <image name="DefaultPFP" width="214" height="214"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rOJ-Rt-eSj"/>
-        <segue reference="PvX-0Q-eYG"/>
+        <segue reference="omS-k9-EUh"/>
     </inferredMetricsTieBreakers>
 </document>

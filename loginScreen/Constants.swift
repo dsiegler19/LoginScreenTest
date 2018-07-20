@@ -10,6 +10,6 @@ import Foundation
 
 struct Constants {
     
-    static let SERVER_URL = URL(string: "http://192.168.2.135:5000/")!
+    static let SERVER_URL = URL(string: "http://192.168.0.11:5000/")!
     
 }

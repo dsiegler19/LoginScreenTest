@@ -10,14 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
-
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
     
     private var cellHeights: [CGFloat] = []
-    
-    @IBOutlet weak var pickerViewTest: UIPickerView!
     
     private var publicMessages: [PublicMessage]? = nil
     private var messagesRequested = false
@@ -28,15 +26,15 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
         
         super.viewDidLoad()
         
-        self.pickerViewTest.layer.zPosition = 2
+        let icon = UIImage(named: "LocationPinIcon")!
+        filterButton.imageView?.contentMode = .scaleAspectFit
+        filterButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        filterButton.setImage(icon, for: .normal)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
         self.tableView.separatorStyle = .none
-        
-        self.pickerViewTest.dataSource = self;
-        self.pickerViewTest.delegate = self;
-        
+                
         self.locationManager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .notDetermined {
@@ -141,11 +139,23 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
         cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width / 2
         cell.profilePicture.clipsToBounds = true
         
-        // Assign the team name
-        cell.teamNameLabel.text = message.teamName
+        // Assign the team name and the time posted
+        let boldFont = UIFont(descriptor: cell.teamNameAndTimePosted.font.fontDescriptor.withSymbolicTraits(.traitBold)!, size: cell.teamNameAndTimePosted.font.pointSize)
+        let teamNameAndTimePosted = NSMutableAttributedString()
+        teamNameAndTimePosted.append(NSAttributedString(string: message.teamName, attributes: [NSAttributedStringKey.font: boldFont]))
+        teamNameAndTimePosted.append(NSAttributedString(string:  " • " + timeAgoPostedString(message.timePosted)))
+        cell.teamNameAndTimePosted.attributedText = teamNameAndTimePosted
         
         // Display the message
         cell.messageLabel.text = message.content
+
+        // Set the color and add a corner radius (doesn't look good)
+        /*cell.layer.cornerRadius = 25
+        cell.contentView.backgroundColor = UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
+        cell.contentView.clipsToBounds = true*/
+        
+        // Add a small gray footer
+        cell.grayFooter.backgroundColor = UIColor(red: 225.0 / 255.0, green: 225.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
         
         // Set the correct height
         cellHeights[row] = cell.messageLabel.frame.maxY
@@ -153,25 +163,60 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
         return cell
         
     }
+    
+    private func timeAgoPostedString(_ timePosted: Date) -> String {
+        
+        let timeDifference = Calendar.current.dateComponents([.minute, .hour, .day, .month, .year], from: timePosted, to: Date())
+        
+        if timeDifference.year! > 0 {
+            
+            return String(timeDifference.year!) + " year" + (timeDifference.year! == 1 ? "" : "s") + " ago"
+            
+        }
+        
+        else if timeDifference.month! > 0 {
+            
+            return String(timeDifference.month!) + " month" + (timeDifference.month! == 1 ? "" : "s") + " ago"
 
-    @IBAction func onPickerViewTestTapped(_ sender: Any) {
+        }
         
-        self.pickerViewTest.isHidden = true;
+        else if timeDifference.day! > 0 {
+            
+            let days = timeDifference.day!
+            
+            if days < 7 {
+                
+                return String(timeDifference.day!) + " day" + (timeDifference.day! == 1 ? "" : "s") + " ago"
+                
+            }
+            
+            if days >= 7 {
+                
+                return String(timeDifference.day! / 7) + " week" + (timeDifference.day! / 7 == 1 ? "" : "s") + " ago"
+                
+            }
+            
+        }
+        
+        else if timeDifference.hour! > 0 {
+            
+            return String(timeDifference.hour!) + "h ago"
+            
+        }
+            
+        else if timeDifference.minute! > 0 {
+            
+            return String(timeDifference.minute!) + "m ago"
+            
+        }
+        
+        return "Now"
         
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    @IBAction func filterButtonTapped(_ sender: Any) {
         
-        var a = ["a", "b", "c", "d", "e"]
-        return a[row]
+        print("filter button tapped")
         
     }
     
@@ -186,7 +231,8 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
 class MessageTableViewCell: UITableViewCell {
         
     @IBOutlet weak var profilePicture: UIImageView!
-    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var teamNameAndTimePosted: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var grayFooter: UIImageView!
     
 }
