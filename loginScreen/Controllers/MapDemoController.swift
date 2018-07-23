@@ -26,6 +26,8 @@ class MapDemoController {
         
         let mapDemoURL = Constants.SERVER_URL.appendingPathComponent("mapkit_test").withQueries(queries)!
         
+        print(mapDemoURL.absoluteString)
+        
         let task = URLSession.shared.dataTask(with: mapDemoURL, completionHandler: { (data, response, error) in
             
             let jsonDecoder = JSONDecoder()

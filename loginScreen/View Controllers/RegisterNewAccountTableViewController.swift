@@ -55,7 +55,7 @@ class RegisterNewAccountTableViewController: UITableViewController, UIPickerView
         self.tableView.setContentOffset(CGPoint(x: 0, y: -50), animated: true)
 
         // Send POST request to the server
-        RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, color: role!) { responses in
+        RegisterNewAccountController.shared.attemptRegisterNewUser(username: usernameTextField.text!, passwordString: passwordTextField.text!, email: emailTextField.text!, role: role!) { responses in
 
             if let responses = responses, responses.count >= 0 {
 
