@@ -13,14 +13,14 @@ struct RegisterNewAccountController {
     
     static let shared = RegisterNewAccountController()
     
-    func attemptRegisterNewUser(username: String, passwordString: String, email: String, color: String, completion: @escaping ([String]?) -> Void) {
+    func attemptRegisterNewUser(username: String, passwordString: String, email: String, role: String, completion: @escaping ([String]?) -> Void) {
         
         let passwordHash = MD5(passwordString).lowercased()
         
         let data = ["username": username,
                        "password": passwordHash,
                        "email": email,
-                       "color": color]
+                       "role": role]
         
         let registerURL = Constants.SERVER_URL.appendingPathComponent("register")
         
