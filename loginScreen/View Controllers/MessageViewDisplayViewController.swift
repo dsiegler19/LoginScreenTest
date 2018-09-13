@@ -9,8 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
+import TCPickerView
 
 class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButton: UIButton!
@@ -26,11 +28,9 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
         
         super.viewDidLoad()
         
-        let icon = UIImage(named: "LocationPinIcon")!
-        filterButton.imageView?.contentMode = .scaleAspectFit
-        filterButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
-        filterButton.setImage(icon, for: .normal)
-        
+        self.filterButton.setTitleColor(.gray, for: .highlighted)
+        self.filterButton.setTitleColor(.gray, for: .selected)
+
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
         self.tableView.separatorStyle = .none
@@ -148,11 +148,6 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
         
         // Display the message
         cell.messageLabel.text = message.content
-
-        // Set the color and add a corner radius (doesn't look good)
-        /*cell.layer.cornerRadius = 25
-        cell.contentView.backgroundColor = UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
-        cell.contentView.clipsToBounds = true*/
         
         // Add a small gray footer
         cell.grayFooter.backgroundColor = UIColor(red: 225.0 / 255.0, green: 225.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
@@ -217,6 +212,27 @@ class MessageViewDisplayViewController: UIViewController, UITableViewDelegate, U
     @IBAction func filterButtonTapped(_ sender: Any) {
         
         print("filter button tapped")
+        
+        var picker = TCPickerView()
+        picker.title = "Cars"
+        let cars = [
+            "Chevrolet Bolt EV",
+            "Subaru WRX",
+            "Porsche Panamera",
+            "BMW 330e",
+            "Chevrolet Volt",
+            "Ford C-Max Hybrid",
+            "Ford Focus"
+        ]
+        let values = cars.map { TCPickerView.Value(title: $0) }
+        picker.values = values
+        picker.selection = .single
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                print(values[i].title)
+            }
+        }
+        picker.show()
         
     }
     
